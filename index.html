@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casa Capriles · Oficio gráfico, editorial y digital</title>
+<meta name="description" content="Casa Capriles reúne una industria gráfica, un sello editorial, una revista de pensamiento y un taller de archivos y portales de autor, al servicio de la palabra escrita y de las instituciones que la cultivan.">
+<link rel="canonical" href="https://casacapriles.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Casa Capriles">
+<meta property="og:description" content="Imprenta, editorial y ediciones digitales al cuidado de una familia.">
+<meta property="og:url" content="https://casacapriles.com/">
+<meta property="og:locale" content="es_VE">
+<meta name="theme-color" content="#1C2B4B">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=EB+Garamond:ital,wght@0,400..600;1,400..500&display=swap">
+<style>
+/* Layout: a printed book page — narrow measure, wide margins, ex libris as the opening plate; sections read like the front matter of a catalogue. */
+:root{
+  --papel:#F2ECDF;      /* cream paper */
+  --papel-2:#E9E1D0;    /* deeper paper for plates */
+  --tinta:#1C2B4B;      /* ink blue */
+  --tinta-suave:#4A5672;/* faded ink for secondary text */
+  --rubrica:#8E2F25;    /* rubrication red, used only for initials and pilcrows */
+  --filete:#B9AE97;     /* hairline rule */
+  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-texto:"EB Garamond","Garamond","Iowan Old Style",Georgia,serif;
+  --medida:38rem;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --papel:#121A2B;--papel-2:#18223A;--tinta:#E8E0CE;--tinta-suave:#A9AFBF;--rubrica:#D0806F;--filete:#3A4562;color-scheme:dark}}
+:root[data-theme="dark"]{--papel:#121A2B;--papel-2:#18223A;--tinta:#E8E0CE;--tinta-suave:#A9AFBF;--rubrica:#D0806F;--filete:#3A4562;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:1.2rem;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  font-feature-settings:"onum" 1,"liga" 1}
+a{color:inherit;text-decoration-color:var(--filete);text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{text-decoration-color:var(--rubrica)}
+a:focus-visible{outline:2px solid var(--rubrica);outline-offset:3px}
+.versalitas{font-variant:small-caps;letter-spacing:.08em;font-feature-settings:"c2sc" 0,"smcp" 1}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0}
+p{margin:0}
+.envoltura{max-width:68rem;margin-inline:auto}
+
+/* Cabecera */
+header.cab{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between;align-items:baseline;
+  padding-block:1.4rem;border-bottom:1px solid var(--filete)}
+.marca{font-family:var(--f-display);font-size:1.35rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;list-style:none;margin:0;padding:0;font-size:1.05rem}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+
+/* Portada */
+.portada{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:clamp(2rem,6vw,5rem);align-items:center;padding-block:clamp(3rem,8vw,6rem)}
+.exlibris{width:100%;max-width:15rem;height:auto;color:var(--tinta)}
+.portada h1{font-size:clamp(2.4rem,5.4vw,4.3rem);line-height:1.04;letter-spacing:-.01em}
+.portada h1 em{font-style:italic;color:var(--rubrica)}
+.portada .bajada{margin-top:1.6rem;max-width:var(--medida);font-size:1.3rem;color:var(--tinta-suave)}
+.portada .pie{margin-top:2rem;font-size:1rem;color:var(--tinta-suave)}
+@media (max-width:720px){.portada{grid-template-columns:1fr;justify-items:center;text-align:center}.portada .bajada{margin-inline:auto}}
+
+/* Secciones */
+section{padding-block:clamp(3rem,7vw,5rem);border-top:1px solid var(--filete)}
+.titulo-sec{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:1rem 3rem;align-items:baseline;margin-bottom:2.5rem}
+.titulo-sec .rotulo{font-size:1rem;color:var(--rubrica)}
+.titulo-sec h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12}
+.cuerpo{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:1rem 3rem}
+.cuerpo > *{grid-column:2;min-width:0}
+@media (max-width:720px){.titulo-sec,.cuerpo{grid-template-columns:1fr}.cuerpo > *{grid-column:1}}
+.prosa{max-width:var(--medida);display:grid;gap:1.1rem}
+.prosa p:first-child::first-letter{font-family:var(--f-display);float:left;font-size:3.6em;line-height:.82;padding:.06em .1em 0 0;color:var(--rubrica)}
+
+/* Valores */
+.valores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:3rem;max-width:52rem}
+.valores h3{font-size:1.45rem;font-style:italic;margin-bottom:.4rem}
+.valores p{font-size:1.05rem;color:var(--tinta-suave)}
+@media (max-width:720px){.valores{grid-template-columns:1fr}}
+
+/* Divisiones */
+.divisiones{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--tinta)}
+.divisiones li{padding:2rem 2rem 2.2rem 0;border-bottom:1px solid var(--filete);display:grid;gap:.6rem;align-content:start}
+.divisiones li:nth-child(odd){border-right:1px solid var(--filete)}
+.divisiones li:nth-child(even){padding-left:2rem;padding-right:0}
+.num{font-family:var(--f-display);font-size:1.1rem;color:var(--rubrica);letter-spacing:.1em}
+.divisiones h3{font-size:1.75rem;line-height:1.15}
+.divisiones .sello{font-style:italic;font-size:1.15rem}
+.divisiones p.desc{font-size:1.05rem;color:var(--tinta-suave)}
+.divisiones .dominio{font-size:1rem;margin-top:.4rem}
+@media (max-width:720px){.divisiones{grid-template-columns:1fr}.divisiones li,.divisiones li:nth-child(even){padding:1.6rem 0;border-right:0}}
+
+/* Obras: fichas de catálogo */
+.grupo-obras + .grupo-obras{margin-top:3rem}
+.grupo-obras h3{font-size:1.25rem;font-style:italic;margin-bottom:1rem;color:var(--tinta-suave)}
+.fichas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.25rem}
+.ficha{background:var(--papel-2);padding:1.3rem 1.4rem 1.2rem;display:grid;grid-template-rows:auto auto 1fr auto;gap:.35rem;
+  border:1px solid var(--filete);position:relative}
+.ficha::before{content:"";position:absolute;inset:5px;border:1px solid var(--filete);opacity:.55;pointer-events:none}
+.ficha .tipo{font-size:.92rem;color:var(--rubrica)}
+.ficha h4{font-family:var(--f-display);font-weight:400;font-size:1.3rem;line-height:1.2;margin:0}
+.ficha p{font-size:1rem;color:var(--tinta-suave)}
+.ficha .pie-ficha{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:.6rem;padding-top:.6rem;border-top:1px dotted var(--filete);font-size:.95rem}
+.estado{font-style:italic;color:var(--tinta-suave)}
+
+/* Colofón explicado */
+.formula{margin-top:2rem;display:grid;gap:0;max-width:44rem;border-top:1px solid var(--filete)}
+.formula div{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:.4rem 1.5rem;padding-block:.8rem;border-bottom:1px solid var(--filete);font-size:1.02rem}
+.formula dt{color:var(--tinta-suave)}
+.formula dd{margin:0;font-style:italic}
+@media (max-width:560px){.formula div{grid-template-columns:1fr}}
+
+/* Contacto */
+.contacto .prosa a{font-family:var(--f-display);font-size:1.5rem;text-decoration:none;border-bottom:1px solid var(--rubrica)}
+
+/* Colofón final */
+footer{border-top:3px double var(--filete);padding-block:3rem 4rem;text-align:center;display:grid;gap:1rem;justify-items:center;font-size:1rem;color:var(--tinta-suave)}
+footer .florón{font-size:1.4rem;color:var(--rubrica)}
+footer .colofon{max-width:30rem;font-style:italic;line-height:1.55}
+.aviso{font-size:.9rem;background:var(--papel-2);border:1px dashed var(--filete);padding:.6rem 1rem;margin-top:1.5rem;max-width:var(--medida)}
+</style>
+</head>
+<body>
+<div class="envoltura">
+<header class="cab">
+  <a class="marca" href="#inicio">Casa Capriles</a>
+  <nav aria-label="Principal"><ul>
+    <li><a href="#la-casa">La Casa</a></li>
+    <li><a href="#divisiones">Divisiones</a></li>
+    <li><a href="#obras">Obras</a></li>
+    <li><a href="#al-cuidado">Al cuidado de</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul></nav>
+</header>
+
+<main id="inicio">
+<div class="portada">
+  <svg class="exlibris" viewBox="0 0 240 300" role="img" aria-label="Ex libris de Casa Capriles con el monograma CC">
+    <defs><path id="arco" d="M120,40 a92,122 0 1,1 -0.1,0"/></defs>
+    <ellipse cx="120" cy="162" rx="112" ry="142" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <ellipse cx="120" cy="162" rx="106" ry="136" fill="none" stroke="currentColor" stroke-width=".6"/>
+    <ellipse cx="120" cy="162" rx="78" ry="104" fill="none" stroke="currentColor" stroke-width=".6"/>
+    <g transform="translate(0,0)">
+      <text font-family="EB Garamond, Georgia, serif" font-size="12.5" letter-spacing="2.4" fill="currentColor">
+        <textPath href="#arco" startOffset="0">EX LIBRIS · CASA CAPRILES · OFICIO GRÁFICO Y EDITORIAL · VENEZUELA ·</textPath>
+      </text>
+    </g>
+    <text x="113" y="205" text-anchor="middle" font-family="Bodoni Moda, Didot, serif" font-style="italic" font-size="138" fill="currentColor">C</text>
+    <text x="128" y="190" text-anchor="middle" font-family="Bodoni Moda, Didot, serif" font-size="62" fill="var(--rubrica)">C</text>
+    <path d="M96 236 h48" stroke="currentColor" stroke-width=".8"/>
+    <text x="120" y="252" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="11" letter-spacing="4" fill="currentColor">MMXXVI</text>
+  </svg>
+  <div>
+    <p class="versalitas" style="color:var(--rubrica);margin-bottom:1rem">Casa familiar de oficios</p>
+    <h1>Imprenta, editorial y <em>ediciones digitales</em> al cuidado de una familia.</h1>
+    <p class="bajada">Casa Capriles reúne bajo un mismo techo una industria gráfica, un sello editorial, una revista de pensamiento y un taller de archivos y portales de autor, al servicio de la palabra escrita y de las instituciones que la cultivan.</p>
+    <p class="pie versalitas">Venezuela · Fundada por la familia Capriles</p>
+  </div>
+</div>
+
+<section id="la-casa" aria-labelledby="t-casa">
+  <div class="titulo-sec"><p class="rotulo versalitas">La Casa</p><h2 id="t-casa">Una casa, en el sentido antiguo de la palabra</h2></div>
+  <div class="cuerpo">
+    <div class="prosa">
+      <p>En la tradición hispana e italiana, las grandes casas impresoras y editoriales unían el oficio artesanal, el rigor intelectual y el nombre de una familia. Casa Capriles recoge esa tradición y la extiende del papel a la pantalla.</p>
+      <p>No somos una agencia de publicidad ni un estudio de programación. Somos una casa de oficio: imprimimos, editamos, publicamos y preservamos. Cada obra que sale de nuestras manos lleva el mismo cuidado, sea un libro, una revista o el archivo digital de una vida.</p>
+      <p>Trabajamos para autores, familias, universidades, colegios y centros culturales que necesitan que su palabra perdure.</p>
+    </div>
+    <div class="valores">
+      <div><h3>Oficio</h3><p>El trabajo bien hecho, aprendido y transmitido en familia, con la paciencia del taller.</p></div>
+      <div><h3>Cuidado</h3><p>Corrección de textos, rigor tipográfico y atención a cada detalle de la edición.</p></div>
+      <div><h3>Permanencia</h3><p>Obras hechas para durar: libros, archivos y portales que conservan la memoria.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="divisiones" aria-labelledby="t-div">
+  <div class="titulo-sec"><p class="rotulo versalitas">Divisiones</p><h2 id="t-div">Cuatro oficios bajo un mismo techo</h2></div>
+  <div class="cuerpo"><ol class="divisiones">
+    <li><span class="num">I</span><h3>Industria Gráfica</h3><p class="sello">Organización Gráficas Capriles</p>
+      <p class="desc">Impresión comercial, editorial e institucional de alta gama, en offset e impresión digital. Cotizaciones y catálogo técnico.</p>
+      <a class="dominio" href="https://graficascapriles.com">graficascapriles.com</a></li>
+    <li><span class="num">II</span><h3>Sello Editorial</h3><p class="sello">Luis Felipe Capriles Editor</p>
+      <p class="desc">Edición, cuidado de textos y venta directa de libros de ensayo, historia, literatura y pensamiento.</p>
+      <a class="dominio" href="https://luisfelipecaprileseditor.com">luisfelipecaprileseditor.com</a></li>
+    <li><span class="num">III</span><h3>Medios y Pensamiento</h3><p class="sello">Venezuela Entre Líneas</p>
+      <p class="desc">Revista de ensayo y portal cultural: análisis histórico, crónica y debate intelectual contemporáneo.</p>
+      <a class="dominio" href="https://venezuelaentrelineas.com">venezuelaentrelineas.com</a></li>
+    <li><span class="num">IV</span><h3>Archivos, Autores y Ediciones Digitales</h3><p class="sello">División curatorial de Casa Capriles</p>
+      <p class="desc">Portales permanentes para autores, figuras históricas e instituciones educativas y culturales.</p>
+      <a class="dominio" href="#obras">Ver las obras</a></li>
+  </ol></div>
+</section>
+
+<section id="obras" aria-labelledby="t-obras">
+  <div class="titulo-sec"><p class="rotulo versalitas">Obras</p><h2 id="t-obras">Archivos, autores y ediciones digitales</h2></div>
+  <div class="cuerpo">
+    <div class="prosa">
+      <p>En Casa Capriles extendemos el rigor del oficio editorial al entorno digital. Desarrollamos portales web, archivos documentales y plataformas de autor concebidos para preservar y difundir trayectorias intelectuales, históricas, literarias e institucionales.</p>
+      <p>Nos encargamos de la arquitectura de la información, la curaduría documental, el cuidado de los textos y el diseño técnico para transformar acervos dispersos en obras digitales permanentes.</p>
+    </div>
+    <div style="margin-top:3rem">
+      <div class="grupo-obras"><h3>Portales de autor y archivos</h3>
+        <ul class="fichas">
+          <li class="ficha"><span class="tipo versalitas">Archivo histórico</span><h4>Gloria Lizárraga de Capriles</h4>
+            <p>Acervo biográfico, fotográfico y documental de la primera alcaldesa electa por voto directo del Municipio Baruta.</p>
+            <div class="pie-ficha"><a href="https://gloriacapriles.com">gloriacapriles.com</a><span class="estado">En línea</span></div></li>
+          <li class="ficha"><span class="tipo versalitas">Obra filosófica</span><h4>Rafael Tomás Caldera</h4>
+            <p>Catálogo razonado de su obra: ensayos, conferencias y trayectoria intelectual.</p>
+            <div class="pie-ficha"><a href="https://rafaeltomascaldera.com">rafaeltomascaldera.com</a><span class="estado">En línea</span></div></li>
+          <li class="ficha"><span class="tipo versalitas">Portal de autora</span><h4>María Denisse Fanianos de Capriles</h4>
+            <p>Semblanza, libros y hemeroteca de una periodista y escritora en plena actividad.</p>
+            <div class="pie-ficha"><a href="https://mariadenissefanianosdecapriles.com">mariadenissefanianosdecapriles.com</a><span class="estado">En preparación</span></div></li>
+        </ul></div>
+      <div class="grupo-obras"><h3>Instituciones educativas y culturales</h3>
+        <ul class="fichas">
+          <li class="ficha"><span class="tipo versalitas">Centro cultural · Valencia</span><h4>Centro Cultural Llano Ancho</h4>
+            <p>Formación humana y cultural para jóvenes y profesionales.</p>
+            <div class="pie-ficha"><a href="https://llanoancho.org">llanoancho.org</a><span class="estado">En preparación</span></div></li>
+          <li class="ficha"><span class="tipo versalitas">Centro cultural · Maracaibo</span><h4>Centro Cultural Pozoviejo</h4>
+            <p>Décadas de trayectoria en la formación de jóvenes en Maracaibo.</p>
+            <div class="pie-ficha"><a href="https://pozoviejo.org">pozoviejo.org</a><span class="estado">En preparación</span></div></li>
+          <li class="ficha"><span class="tipo versalitas">Club juvenil · Caracas</span><h4>Club Juvenil y Centro Cultural Guayacán</h4>
+            <p>Actividades formativas, deportivas y culturales para jóvenes.</p>
+            <div class="pie-ficha"><a href="https://centroguayacan.org">centroguayacan.org</a><span class="estado">En preparación</span></div></li>
+          <li class="ficha"><span class="tipo versalitas">Campamento</span><h4>Campamento Guayacán</h4>
+            <p>Campamentos de verano para niños y jóvenes.</p>
+            <div class="pie-ficha"><a href="https://campamentoguayacan.org">campamentoguayacan.org</a><span class="estado">En preparación</span></div></li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="al-cuidado" aria-labelledby="t-cuidado">
+  <div class="titulo-sec"><p class="rotulo versalitas">Al cuidado de</p><h2 id="t-cuidado">La firma de la Casa</h2></div>
+  <div class="cuerpo">
+    <div class="prosa"><p>Como en los libros antiguos, cada obra lleva su colofón. Al pie de cada sitio que hacemos aparece la fórmula clásica de la edición, <i>al cuidado de</i>, que en italiano se dice <i>a cura di</i>. Así se sabe quién respondió por la obra.</p></div>
+    <dl class="formula">
+      <div><dt>Industria gráfica</dt><dd>© 2026 Organización Gráficas Capriles C.A. Una empresa de Casa Capriles.</dd></div>
+      <div><dt>Sello editorial</dt><dd>© 2026 Luis Felipe Capriles Editor. Sello editorial de Casa Capriles.</dd></div>
+      <div><dt>Publicación</dt><dd>© 2026 Venezuela Entre Líneas. Una publicación de Casa Capriles.</dd></div>
+      <div><dt>Archivo histórico</dt><dd>Archivo documental y edición digital al cuidado de Casa Capriles.</dd></div>
+      <div><dt>Portales de autor e instituciones</dt><dd>Edición digital y desarrollo al cuidado de Casa Capriles.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="contacto" class="contacto" aria-labelledby="t-contacto">
+  <div class="titulo-sec"><p class="rotulo versalitas">Contacto</p><h2 id="t-contacto">Para encargos, ediciones y archivos</h2></div>
+  <div class="cuerpo"><div class="prosa">
+    <p>Si su institución, su familia o su obra necesita un libro, una impresión o un archivo digital permanente, escríbanos.</p>
+    <p><a href="mailto:contacto@casacapriles.com">contacto@casacapriles.com</a></p>
+  </div></div>
+</section>
+</main>
+
+<footer>
+  <span class="florón" aria-hidden="true">❦</span>
+  <p class="colofon">Esta página se compuso en Bodoni Moda y EB Garamond, sobre papel color crema y en tinta azul, en el taller digital de Casa Capriles.</p>
+  <p class="versalitas">© 2026 Casa Capriles · Venezuela</p>
+</footer>
+</div>
+</body>
+</html>
