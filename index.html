@@ -168,6 +168,12 @@ section + section{border-top:1px solid var(--filete)}
 @media (max-width:820px){.banda .doble{grid-template-columns:1fr}.banda .sim{max-width:13rem}.banda .texto{text-align:left}}
 @media (max-width:460px){.banda dl div{grid-template-columns:1fr;gap:.1rem}}
 
+.banda .tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.8rem,4vw,3.5rem);margin-top:clamp(3.5rem,7vw,5.5rem);padding-top:clamp(2.5rem,5vw,3.5rem);border-top:1px solid var(--linea-noche)}
+.banda .tres h3{font-size:1.55rem;margin:.5rem 0 .8rem;color:var(--crema)}
+.banda .tres p:not(.rotulo){font-size:1.05rem;max-width:none}
+.banda .muestras{display:flex;gap:.5rem;margin-top:1.2rem}.banda .muestras span{width:2.2rem;height:2.2rem;border-radius:50%}
+.banda .nota-id{text-align:center;font-style:italic;font-size:1rem;color:rgba(242,236,223,.6);max-width:40rem;margin:clamp(2.5rem,5vw,3.5rem) auto 0}
+@media (max-width:820px){.banda .tres{grid-template-columns:1fr}}
 /* Obras */
 .grupo{max-width:62rem;margin-inline:auto}
 .grupo + .grupo{margin-top:3.2rem}
@@ -226,7 +232,7 @@ footer .legal{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase}
       <nav id="menu" aria-label="Principal"><ul>
         <li><a href="#la-casa">La Casa</a></li>
         <li><a href="#divisiones">Divisiones</a></li>
-        <li><a href="#portal">El Portal</a></li>
+        <li><a href="#portal">El símbolo</a></li>
         <li><a href="#obras">Obras</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul></nav>
@@ -303,9 +309,22 @@ footer .legal{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase}
     <dl>
       <div><dt>El arco</dt><dd>De medio punto, como las portadas de las casas antiguas.</dd></div>
       <div><dt>La piedra clave</dt><dd>En rojo rúbrica, el color de las iniciales de los primeros libros.</dd></div>
-      <div><dt>Las dos C</dt><dd>Casa Capriles. Dos generaciones bajo el mismo techo.</dd></div>
+      <div><dt>Las dos C</dt><dd>Casa Capriles. Una grande en cursiva y otra pequeña en redonda: dos generaciones bajo el mismo techo.</dd></div>
+      <div><dt>El umbral</dt><dd>La base firme sobre la que se levanta todo. Más ancha que el arco, como los cimientos.</dd></div>
     </dl>
   </div>
+</div>
+<div class="envoltura">
+  <div class="tres">
+    <div class="revela"><p class="rotulo">El lema</p><h3>Casa y oficio</h3>
+      <p><i>Domus</i> es la casa: la familia, el techo, lo que permanece. <i>Officium</i> es el oficio, el trabajo bien hecho y también el deber de hacerlo. Va en latín, como las divisas de los grandes impresores del Renacimiento: Aldo Manucio en Venecia, Plantino en Amberes.</p></div>
+    <div class="revela"><p class="rotulo">Los colores</p><h3>Tinta, papel y rúbrica</h3>
+      <p>Son los colores de un libro bien impreso: azul tinta sobre papel crema, y una gota de rojo, como las iniciales que los copistas escribían en rojo. El azul transmite confianza y solidez; el rojo, poco y en su sitio, da vida.</p>
+      <div class="muestras" aria-hidden="true"><span style="background:#1C2B4B;outline:1px solid rgba(242,236,223,.35)"></span><span style="background:#F2ECDF"></span><span style="background:#8E2F25"></span></div></div>
+    <div class="revela"><p class="rotulo">La puerta abierta</p><h3>Una casa que recibe</h3>
+      <p>Casa Capriles es la casa matriz de la familia. Cada empresa conserva su nombre y la Casa la respalda con su firma. Y como toda casa, tiene la puerta abierta: los proyectos que nazcan en la familia podrán entrar por ella y llevar su marca desde el primer día.</p></div>
+  </div>
+  <p class="nota-id revela">Las letras son Bodoni Moda, para el nombre y los títulos, y EB Garamond, para leer: dos familias clásicas que vienen de los talleres de Parma y de París.</p>
 </div>
 </section>
 
