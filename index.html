@@ -3,283 +3,380 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Casa Capriles · Oficio gráfico, editorial y digital</title>
+<title>Casa Capriles · Imprenta, editorial y ediciones digitales</title>
 <meta name="description" content="Casa Capriles reúne una industria gráfica, un sello editorial, una revista de pensamiento y un taller de archivos y portales de autor, al servicio de la palabra escrita y de las instituciones que la cultivan.">
 <link rel="canonical" href="https://casacapriles.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Casa Capriles">
+<meta property="og:site_name" content="Casa Capriles">
+<meta property="og:title" content="Casa Capriles · Domus et officium">
 <meta property="og:description" content="Imprenta, editorial y ediciones digitales al cuidado de una familia.">
 <meta property="og:url" content="https://casacapriles.com/">
+<meta property="og:image" content="https://casacapriles.com/marca/imagen-para-compartir_1200x630.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_VE">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1C2B4B">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1C2B4B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=EB+Garamond:ital,wght@0,400..600;1,400..500&display=swap">
 <style>
-/* Layout: a printed book page — narrow measure, wide margins, ex libris as the opening plate; sections read like the front matter of a catalogue. */
+/* Casa Capriles · identidad «El Portal». Tinta, papel y una gota de rúbrica. */
 :root{
-  --papel:#F2ECDF;      /* cream paper */
-  --papel-2:#E9E1D0;    /* deeper paper for plates */
-  --tinta:#1C2B4B;      /* ink blue */
-  --tinta-suave:#4A5672;/* faded ink for secondary text */
-  --rubrica:#8E2F25;    /* rubrication red, used only for initials and pilcrows */
-  --filete:#B9AE97;     /* hairline rule */
+  --papel:#F2ECDF; --papel-2:#E9E1D0; --blanco:#FBF8F1;
+  --tinta:#1C2B4B; --pizarra:#4A5672; --rubrica:#8E2F25; --filete:#B9AE97;
+  --noche:#1C2B4B; --crema:#F2ECDF; --clave-noche:#C9705F; --linea-noche:rgba(242,236,223,.22);
+  --clave:var(--rubrica);
   --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
   --f-texto:"EB Garamond","Garamond","Iowan Old Style",Georgia,serif;
-  --medida:38rem;
+  --medida:38rem; --ancho:72rem;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --papel:#121A2B;--papel-2:#18223A;--tinta:#E8E0CE;--tinta-suave:#A9AFBF;--rubrica:#D0806F;--filete:#3A4562;color-scheme:dark}}
-:root[data-theme="dark"]{--papel:#121A2B;--papel-2:#18223A;--tinta:#E8E0CE;--tinta-suave:#A9AFBF;--rubrica:#D0806F;--filete:#3A4562;color-scheme:dark}
+  --papel:#111827;--papel-2:#172036;--blanco:#141d31;--tinta:#ECE5D5;--pizarra:#A9B0C2;--rubrica:#D58A79;--filete:#38425C;
+  --noche:#0B1120;color-scheme:dark}}
+:root[data-theme="dark"]{--papel:#111827;--papel-2:#172036;--blanco:#141d31;--tinta:#ECE5D5;--pizarra:#A9B0C2;--rubrica:#D58A79;--filete:#38425C;--noche:#0B1120;color-scheme:dark}
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:1.2rem;line-height:1.6;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
-  font-feature-settings:"onum" 1,"liga" 1}
-a{color:inherit;text-decoration-color:var(--filete);text-underline-offset:.2em;text-decoration-thickness:1px}
+  font-feature-settings:"onum" 1,"liga" 1,"kern" 1;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration-color:var(--filete);text-underline-offset:.2em;text-decoration-thickness:1px;transition:text-decoration-color .2s,color .2s}
 a:hover{text-decoration-color:var(--rubrica)}
 a:focus-visible{outline:2px solid var(--rubrica);outline-offset:3px}
-.versalitas{font-variant:small-caps;letter-spacing:.08em;font-feature-settings:"c2sc" 0,"smcp" 1}
-h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0}
 p{margin:0}
-.envoltura{max-width:68rem;margin-inline:auto}
+svg{display:block}
+.sim .t,.logo .t{fill:currentColor}.sim .k{fill:var(--clave)}
+.versalitas{font-variant:small-caps;letter-spacing:.09em;font-feature-settings:"smcp" 1}
+.rotulo{font-size:.82rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rubrica)}
+.envoltura{max-width:var(--ancho);margin-inline:auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.salta{position:absolute;left:-999px;top:0;background:var(--papel);padding:.5rem 1rem;z-index:20}.salta:focus{left:1rem}
 
-/* Cabecera */
-header.cab{display:flex;flex-wrap:wrap;gap:.75rem 2rem;justify-content:space-between;align-items:baseline;
-  padding-block:1.4rem;border-bottom:1px solid var(--filete)}
-.marca{font-family:var(--f-display);font-size:1.35rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none}
-nav ul{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;list-style:none;margin:0;padding:0;font-size:1.05rem}
-nav a{text-decoration:none}
-nav a:hover{text-decoration:underline}
+/* ---------- Portada ---------- */
+.portada{position:relative;background:var(--noche);color:var(--crema);overflow:hidden;--clave:var(--clave-noche);isolation:isolate}
+.portada::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.06;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-6 -8 116 146' fill='%23F2ECDF'%3E%3Cpath d='M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8ZM49.68 128.221Q42.436 128.221 37.003 125.187Q31.57 122.153 28.559 116.555Q25.549 110.957 25.549 103.29Q25.549 93.646 28.818 85.062Q32.087 76.477 37.779 69.891Q43.471 63.306 50.856 59.542Q58.242 55.779 66.521 55.779Q72.071 55.779 76.446 58.061Q79.99 59.909 82.129 63.223L88.865 56.72H89.053L84.49 76.1H84.302Q84.913 71.208 83.831 67.492Q82.749 63.776 80.421 61.259Q78.092 58.743 74.776 57.449Q71.46 56.156 67.556 56.156Q62.522 56.156 58.265 58.531Q54.008 60.907 50.527 65.023Q47.046 69.139 44.341 74.431Q41.636 79.723 39.849 85.65Q38.061 91.577 37.121 97.574Q36.18 103.572 36.18 108.981Q36.18 113.78 37.756 118.084Q39.332 122.388 42.554 125.116Q45.776 127.844 50.668 127.844Q56.924 127.844 62.358 125.187Q67.791 122.529 71.813 118.037Q73.808 115.807 75.289 113.295Q75.812 113.606 76.357 113.871L72.777 127.28H72.589L69.394 120.798Q66.145 123.674 62.099 125.563Q56.407 128.221 49.68 128.221ZM83.43 114.288Q78.861 114.288 75.422 112.059Q71.984 109.83 70.069 105.933Q68.154 102.035 68.154 97.04Q68.154 92.045 70.069 88.147Q71.984 84.25 75.422 82.021Q78.861 79.792 83.43 79.792Q85.693 79.792 87.686 80.598Q89.68 81.405 91.114 82.816L93.914 80.24H94.003V89.469H93.914Q93.869 86.714 92.424 84.586Q90.979 82.458 88.706 81.237Q86.432 80.016 83.878 80.016Q80.989 80.016 78.984 81.506Q76.979 82.995 75.77 85.47Q74.56 87.946 74.011 90.958Q73.462 93.971 73.462 97.04Q73.462 100.086 74.011 103.11Q74.56 106.134 75.77 108.61Q76.979 111.085 78.984 112.574Q80.989 114.064 83.878 114.064Q86.208 114.064 88.123 113.314Q90.038 112.563 91.427 111.23Q92.816 109.898 93.578 108.206Q94.339 106.515 94.362 104.611H94.451V113.84H94.362L91.808 111.062Q90.352 112.541 88.202 113.414Q86.051 114.288 83.43 114.288Z'/%3E%3Cpath d='M55 14H65L62.5 28H57.5Z'/%3E%3C/svg%3E");background-size:46px 58px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 45%,transparent 30%,#000 85%);mask-image:radial-gradient(ellipse 70% 60% at 50% 45%,transparent 30%,#000 85%)}
+.portada .marco{position:absolute;inset:clamp(10px,2vw,22px);border:1px solid var(--linea-noche);pointer-events:none}
+.portada .marco::after{content:"";position:absolute;inset:6px;border:1px solid rgba(242,236,223,.1)}
+.cab{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;gap:1rem;padding-block:clamp(1.6rem,3.4vw,2.4rem) 0}
+.cab .firma{display:none;align-items:center;gap:.8rem;text-decoration:none;color:var(--crema)}
+.cab .firma .sim{height:2.2rem;width:auto}
+.cab .firma .logo{height:.62rem;width:auto}
+.cab nav ul{display:flex;gap:.3rem 1.7rem;list-style:none;margin:0;padding:0;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase}
+.cab nav a{text-decoration:none;color:rgba(242,236,223,.82)}
+.cab nav a:hover{color:var(--crema)}
+.menu-btn{display:none;background:none;border:1px solid var(--linea-noche);color:var(--crema);font:inherit;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;padding:.45rem .8rem;cursor:pointer}
+@media (max-width:820px){
+  .cab{justify-content:flex-end}
+  .menu-btn{display:block}
+  .cab nav{position:absolute;right:0;top:100%;margin-top:.6rem;background:var(--noche);border:1px solid var(--linea-noche);padding:1rem 1.4rem;display:none;z-index:5}
+  .cab nav.abierto{display:block}
+  .cab nav ul{flex-direction:column;gap:.9rem}
+  .cab .firma .logo{display:none}
+}
+.heroe{display:grid;justify-items:center;text-align:center;padding-block:clamp(2.5rem,7vh,5rem) clamp(4rem,10vh,7rem)}
+.heroe .sim{height:clamp(12rem,38vh,20rem);width:auto;overflow:visible}
+.heroe .logo{width:min(26rem,78vw);height:auto;margin-top:clamp(1.8rem,4vh,2.8rem)}
+.heroe .lema{font-style:italic;font-size:clamp(1.15rem,2vw,1.4rem);color:rgba(242,236,223,.78);margin-top:.9rem}
+.heroe .regla{width:2.6rem;height:1px;background:var(--clave-noche);margin:clamp(1.6rem,4vh,2.4rem) auto}
+.heroe h1{font-size:clamp(1.65rem,3.4vw,2.6rem);line-height:1.18;max-width:40rem}
+.heroe h1 em{font-style:italic;color:#E6B7A9}
+.heroe .bajada{margin-top:1.2rem;max-width:36rem;color:rgba(242,236,223,.72);font-size:clamp(1.05rem,1.6vw,1.2rem)}
+.heroe .baja{margin-top:clamp(2.2rem,5vh,3.4rem);font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:rgba(242,236,223,.6);display:grid;justify-items:center;gap:.6rem}
+.heroe .baja::after{content:"";width:1px;height:2.4rem;background:linear-gradient(var(--clave-noche),transparent)}
+/* el portal se construye: arco, piedra clave, letras */
+.js .heroe .sim .t{opacity:0;animation:aparece 1.4s .15s cubic-bezier(.2,.7,.2,1) forwards}
+.js .heroe .sim .k{opacity:0;transform:translateY(-34px);animation:clave .9s 1.1s cubic-bezier(.25,1.4,.45,1) forwards}
+.js .heroe .logo,.js .heroe .lema,.js .heroe .regla,.js .heroe h1,.js .heroe .bajada,.js .heroe .baja{opacity:0;animation:sube 1s cubic-bezier(.2,.7,.2,1) forwards}
+.js .heroe .logo{animation-delay:1.5s}.js .heroe .lema{animation-delay:1.7s}.js .heroe .regla{animation-delay:1.85s}
+.js .heroe h1{animation-delay:1.95s}.js .heroe .bajada{animation-delay:2.1s}.js .heroe .baja{animation-delay:2.4s}
+@keyframes aparece{to{opacity:1}}
+@keyframes clave{to{opacity:1;transform:none}}
+@keyframes sube{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.js .heroe *{animation:none!important;opacity:1!important;transform:none!important}}
 
-/* Portada */
-.portada{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:clamp(2rem,6vw,5rem);align-items:center;padding-block:clamp(3rem,8vw,6rem)}
-.exlibris{width:100%;max-width:15rem;height:auto;color:var(--tinta)}
-.portada h1{font-size:clamp(2.4rem,5.4vw,4.3rem);line-height:1.04;letter-spacing:-.01em}
-.portada h1 em{font-style:italic;color:var(--rubrica)}
-.portada .bajada{margin-top:1.6rem;max-width:var(--medida);font-size:1.3rem;color:var(--tinta-suave)}
-.portada .pie{margin-top:2rem;font-size:1rem;color:var(--tinta-suave)}
-@media (max-width:720px){.portada{grid-template-columns:1fr;justify-items:center;text-align:center}.portada .bajada{margin-inline:auto}}
+/* ---------- Sellos ---------- */
+.sellos{padding-block:2.4rem 2.6rem;display:grid;gap:1.3rem;justify-items:center;border-bottom:1px solid var(--filete)}
+.sellos .rotulo{color:var(--pizarra)}
+.sellos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.5rem clamp(2.5rem,7vw,5.5rem)}
+.logo-sello{position:relative;display:block;height:calc(var(--alto,64px) * var(--esc,1));aspect-ratio:var(--ar);max-width:100%}
+.logo-sello .tinta{position:absolute;inset:0;background:var(--tinta);opacity:.8;-webkit-mask:var(--logo) center/contain no-repeat;mask:var(--logo) center/contain no-repeat;transition:opacity .3s}
+.logo-sello img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .3s}
+a.logo-sello:hover .tinta{opacity:1}
+:root:not([data-theme="dark"]) a.logo-sello:hover img{opacity:1}
+:root:not([data-theme="dark"]) a.logo-sello:hover:has(img) .tinta{opacity:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) a.logo-sello img{opacity:0!important}:root:not([data-theme="light"]) a.logo-sello .tinta{opacity:.85!important}}
+@media (max-width:560px){.sellos .logo-sello{--alto:46px}.sellos ul{gap:1.2rem 1.8rem}}
 
-/* Secciones */
-section{padding-block:clamp(3rem,7vw,5rem);border-top:1px solid var(--filete)}
-.titulo-sec{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:1rem 3rem;align-items:baseline;margin-bottom:2.5rem}
-.titulo-sec .rotulo{font-size:1rem;color:var(--rubrica)}
-.titulo-sec h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12}
-.cuerpo{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:1rem 3rem}
-.cuerpo > *{grid-column:2;min-width:0}
-@media (max-width:720px){.titulo-sec,.cuerpo{grid-template-columns:1fr}.cuerpo > *{grid-column:1}}
-.prosa{max-width:var(--medida);display:grid;gap:1.1rem}
-.prosa p:first-child::first-letter{font-family:var(--f-display);float:left;font-size:3.6em;line-height:.82;padding:.06em .1em 0 0;color:var(--rubrica)}
+/* ---------- Secciones ---------- */
+section{padding-block:clamp(4rem,9vw,7rem)}
+section + section{border-top:1px solid var(--filete)}
+.cabeza{display:grid;justify-items:center;text-align:center;gap:.9rem;margin-bottom:clamp(2.6rem,5vw,4rem)}
+.cabeza .sim{height:2rem;width:auto;color:var(--tinta)}
+.cabeza h2{font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.08;max-width:44rem}
+.cabeza .entrada{font-style:italic;font-size:1.25rem;color:var(--pizarra);max-width:36rem}
+.prosa{max-width:var(--medida);margin-inline:auto;display:grid;gap:1.1rem}
+.prosa.ini p:first-child::first-letter{font-family:var(--f-display);float:left;font-size:3.7em;line-height:.8;padding:.07em .1em 0 0;color:var(--rubrica)}
 
-/* Valores */
-.valores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:3rem;max-width:52rem}
-.valores h3{font-size:1.45rem;font-style:italic;margin-bottom:.4rem}
-.valores p{font-size:1.05rem;color:var(--tinta-suave)}
+/* La Casa */
+.cita{margin:clamp(3rem,6vw,4.5rem) auto 0;max-width:50rem;text-align:center;border-block:1px solid var(--tinta);padding-block:clamp(1.8rem,4vw,2.6rem)}
+.cita p{font-family:var(--f-display);font-style:italic;font-size:clamp(1.6rem,3.6vw,2.5rem);line-height:1.2}
+.cita span{display:block;margin-top:.8rem;font-size:.82rem;letter-spacing:.26em;text-transform:uppercase;color:var(--pizarra)}
+.valores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);margin:clamp(3rem,6vw,4rem) auto 0;max-width:60rem}
+.valores div{border-top:1px solid var(--filete);padding-top:1.3rem;position:relative}
+.valores div::before{content:"";position:absolute;top:-1px;left:0;width:.75rem;height:.95rem;background:var(--rubrica);clip-path:polygon(0 0,100% 0,75% 100%,25% 100%)}
+.valores h3{font-size:1.6rem;margin-bottom:.4rem}
+.valores p{font-size:1.06rem;color:var(--pizarra)}
 @media (max-width:720px){.valores{grid-template-columns:1fr}}
 
-/* Divisiones */
-.divisiones{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--tinta)}
-.divisiones li{padding:2rem 2rem 2.2rem 0;border-bottom:1px solid var(--filete);display:grid;gap:.6rem;align-content:start}
-.divisiones li:nth-child(odd){border-right:1px solid var(--filete)}
-.divisiones li:nth-child(even){padding-left:2rem;padding-right:0}
-.num{font-family:var(--f-display);font-size:1.1rem;color:var(--rubrica);letter-spacing:.1em}
-.divisiones h3{font-size:1.75rem;line-height:1.15}
-.divisiones .sello{font-style:italic;font-size:1.15rem}
-.divisiones p.desc{font-size:1.05rem;color:var(--tinta-suave)}
-.divisiones .dominio{font-size:1rem;margin-top:.4rem}
-@media (max-width:720px){.divisiones{grid-template-columns:1fr}.divisiones li,.divisiones li:nth-child(even){padding:1.6rem 0;border-right:0}}
+/* Divisiones: cada una entra por su puerta */
+.puertas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1rem,2.4vw,2rem)}
+.puerta{display:grid;grid-template-rows:auto auto auto auto 1fr auto;gap:.5rem;text-align:center;justify-items:center}
+.puerta .ventana{width:min(100%,11.5rem);height:auto;margin-bottom:.8rem;color:var(--tinta)}
+.ventana .in{fill:var(--papel-2);transition:fill .45s}
+.ventana .ar{fill:currentColor}.ventana .k{fill:var(--rubrica)}
+.ventana text{font-family:var(--f-display);font-size:40px;fill:var(--tinta);transition:fill .45s}
+.puerta:hover .ventana .in,.puerta:focus-within .ventana .in{fill:var(--noche)}
+.puerta:hover .ventana text,.puerta:focus-within .ventana text{fill:var(--crema)}
+.puerta .area{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rubrica)}
+.puerta h3{font-size:1.45rem;line-height:1.18}
+.puerta .quien{font-style:italic;color:var(--pizarra);font-size:1.05rem}
+.puerta .desc{font-size:1.02rem;color:var(--pizarra);max-width:17rem}
+.puerta .ir{font-size:.98rem;margin-top:.5rem}
+.puerta .logo-sello{--alto:38px;margin-top:.4rem}
+@media (max-width:980px){.puertas{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:3.5rem}}
+@media (max-width:520px){.puertas{grid-template-columns:1fr}.puerta .ventana{width:8rem}}
 
-/* Obras: fichas de catálogo */
-.grupo-obras + .grupo-obras{margin-top:3rem}
-.grupo-obras h3{font-size:1.25rem;font-style:italic;margin-bottom:1rem;color:var(--tinta-suave)}
-.fichas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.25rem}
-.ficha{background:var(--papel-2);padding:1.3rem 1.4rem 1.2rem;display:grid;grid-template-rows:auto auto 1fr auto;gap:.35rem;
-  border:1px solid var(--filete);position:relative}
-.ficha::before{content:"";position:absolute;inset:5px;border:1px solid var(--filete);opacity:.55;pointer-events:none}
-.ficha .tipo{font-size:.92rem;color:var(--rubrica)}
-.ficha h4{font-family:var(--f-display);font-weight:400;font-size:1.3rem;line-height:1.2;margin:0}
-.ficha p{font-size:1rem;color:var(--tinta-suave)}
-.ficha .pie-ficha{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:.6rem;padding-top:.6rem;border-top:1px dotted var(--filete);font-size:.95rem}
-.estado{font-style:italic;color:var(--tinta-suave)}
+/* El Portal: banda oscura */
+.banda{background:var(--noche);color:var(--crema);--clave:var(--clave-noche);border:0!important;position:relative;overflow:hidden}
+.banda + section{border-top:0}
+.banda .doble{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2.5rem,7vw,6rem);align-items:center}
+.banda .sim{width:100%;max-width:21rem;height:auto;margin-inline:auto}
+.banda .rotulo{color:var(--clave-noche)}
+.banda h2{font-size:clamp(2.2rem,5vw,3.6rem);font-style:italic;line-height:1.05;margin:.8rem 0 1.4rem}
+.banda p{color:rgba(242,236,223,.8);max-width:31rem}
+.banda p + p{margin-top:1rem}
+.banda dl{margin:2rem 0 0;display:grid;border-top:1px solid var(--linea-noche);max-width:31rem}
+.banda dl div{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;padding-block:.75rem;border-bottom:1px solid var(--linea-noche);font-size:1.02rem}
+.banda dt{font-family:var(--f-display);color:var(--crema)}
+.banda dd{margin:0;color:rgba(242,236,223,.72)}
+@media (max-width:820px){.banda .doble{grid-template-columns:1fr}.banda .sim{max-width:13rem}.banda .texto{text-align:left}}
+@media (max-width:460px){.banda dl div{grid-template-columns:1fr;gap:.1rem}}
 
-/* Colofón explicado */
-.formula{margin-top:2rem;display:grid;gap:0;max-width:44rem;border-top:1px solid var(--filete)}
-.formula div{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:.4rem 1.5rem;padding-block:.8rem;border-bottom:1px solid var(--filete);font-size:1.02rem}
-.formula dt{color:var(--tinta-suave)}
-.formula dd{margin:0;font-style:italic}
-@media (max-width:560px){.formula div{grid-template-columns:1fr}}
+/* Obras */
+.grupo{max-width:62rem;margin-inline:auto}
+.grupo + .grupo{margin-top:3.2rem}
+.grupo h3{font-size:.82rem;letter-spacing:.26em;text-transform:uppercase;color:var(--pizarra);font-family:var(--f-texto);text-align:center;margin-bottom:1.4rem}
+.fichas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1.3rem}
+.ficha{background:var(--blanco);padding:1.6rem 1.6rem 1.3rem;display:grid;grid-template-rows:auto auto 1fr auto;gap:.4rem;border:1px solid var(--filete);position:relative;transition:transform .35s,box-shadow .35s}
+.ficha::before{content:"";position:absolute;inset:5px;border:1px solid var(--filete);opacity:.5;pointer-events:none}
+.ficha:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(28,43,75,.45)}
+.ficha .tipo{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rubrica)}
+.ficha h4{font-size:1.4rem;line-height:1.2}
+.ficha p{font-size:1.02rem;color:var(--pizarra)}
+.ficha .pie-ficha{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--filete);font-size:.95rem}
+.ficha .pie-ficha a{word-break:break-word}
+.estado{font-style:italic;color:var(--pizarra);white-space:nowrap}
+.estado::before{content:"";display:inline-block;width:.42rem;height:.42rem;border-radius:50%;background:#6E8B5E;margin-right:.45rem;vertical-align:.12em}
+
+/* Al cuidado de */
+.formula{max-width:46rem;margin:2.6rem auto 0;border-top:1px solid var(--tinta)}
+.formula div{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:.3rem 1.6rem;padding-block:.95rem;border-bottom:1px solid var(--filete)}
+.formula dt{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pizarra);padding-top:.25rem}
+.formula dd{margin:0;font-style:italic;font-size:1.1rem}
+@media (max-width:600px){.formula div{grid-template-columns:1fr}}
 
 /* Contacto */
-.contacto .prosa a{font-family:var(--f-display);font-size:1.5rem;text-decoration:none;border-bottom:1px solid var(--rubrica)}
+.contacto .doble{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(2rem,6vw,4.5rem);align-items:center;max-width:52rem;margin-inline:auto}
+.lacre{width:clamp(9rem,18vw,12.5rem);height:auto;filter:drop-shadow(0 6px 10px rgba(80,20,15,.28));transform:rotate(-8deg)}
+.contacto h2{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.1;margin:.7rem 0 1rem}
+.contacto p{color:var(--pizarra);max-width:30rem}
+.contacto .correo{display:inline-block;margin-top:1.4rem;font-family:var(--f-display);font-size:clamp(1.3rem,3vw,1.8rem);text-decoration:none;border-bottom:1px solid var(--rubrica);padding-bottom:.15rem}
+@media (max-width:640px){.contacto .doble{grid-template-columns:1fr;justify-items:center;text-align:center}.contacto p{margin-inline:auto}}
 
-/* Colofón final */
-footer{border-top:3px double var(--filete);padding-block:3rem 4rem;text-align:center;display:grid;gap:1rem;justify-items:center;font-size:1rem;color:var(--tinta-suave)}
-footer .florón{font-size:1.4rem;color:var(--rubrica)}
-footer .colofon{max-width:30rem;font-style:italic;line-height:1.55}
-.aviso{font-size:.9rem;background:var(--papel-2);border:1px dashed var(--filete);padding:.6rem 1rem;margin-top:1.5rem;max-width:var(--medida)}
+/* Colofón */
+footer{background:var(--noche);color:rgba(242,236,223,.72);text-align:center;padding:clamp(3.5rem,8vw,5.5rem) 20px 3rem;display:grid;gap:1.2rem;justify-items:center;font-size:1rem}
+footer .sello-lineal{width:7.5rem;height:7.5rem;background:var(--crema);opacity:.9;-webkit-mask:url(marca/sello-lineal.svg) center/contain no-repeat;mask:url(marca/sello-lineal.svg) center/contain no-repeat}
+footer .colofon{max-width:31rem;font-style:italic;line-height:1.6}
+footer .regla{width:2.4rem;height:1px;background:var(--clave-noche)}
+footer .legal{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase}
 
-/* Sellos: logos de las empresas de la Casa, en un solo tono */
-.sellos{border-top:1px solid var(--filete);padding-block:2.2rem 2.6rem;display:grid;gap:1.4rem;justify-items:center}
-.sellos .rotulo{font-size:.95rem;color:var(--tinta-suave)}
-.sellos ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.5rem clamp(2.5rem,7vw,5.5rem)}
-.logo-sello{position:relative;display:block;height:calc(var(--alto,72px) * var(--esc,1));aspect-ratio:var(--ar);max-width:100%}
-.logo-sello .tinta{position:absolute;inset:0;background:var(--tinta);opacity:.82;
-  -webkit-mask:var(--logo) center/contain no-repeat;mask:var(--logo) center/contain no-repeat;transition:opacity .3s}
-.logo-sello img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .3s}
-a.logo-sello:hover .tinta,a.logo-sello:focus-visible .tinta{opacity:1}
-:root:not([data-theme="dark"]) a.logo-sello:hover img,:root:not([data-theme="dark"]) a.logo-sello:focus-visible img{opacity:1}
-:root:not([data-theme="dark"]) a.logo-sello:hover:has(img) .tinta,:root:not([data-theme="dark"]) a.logo-sello:focus-visible:has(img) .tinta{opacity:0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) a.logo-sello img{opacity:0!important}:root:not([data-theme="light"]) a.logo-sello .tinta{opacity:.82!important}}
-@media (prefers-reduced-motion:reduce){.logo-sello .tinta,.logo-sello img{transition:none}}
-.divisiones li{grid-template-rows:4.6rem}
-.divisiones .logo-sello{--alto:56px;align-self:end;justify-self:start;margin-bottom:.4rem}
-@media (max-width:560px){.sellos .logo-sello{--alto:46px}.sellos ul{gap:1.2rem 1.8rem}}
+/* Aparición suave al leer */
+.js .revela{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .revela.visto{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .revela{opacity:1;transform:none;transition:none}}
+@media print{.portada,.banda,footer{background:#fff!important;color:#000!important}.js .revela{opacity:1;transform:none}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="envoltura">
-<header class="cab">
-  <a class="marca" href="#inicio">Casa Capriles</a>
-  <nav aria-label="Principal"><ul>
-    <li><a href="#la-casa">La Casa</a></li>
-    <li><a href="#divisiones">Divisiones</a></li>
-    <li><a href="#obras">Obras</a></li>
-    <li><a href="#al-cuidado">Al cuidado de</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul></nav>
-</header>
+<a class="salta" href="#la-casa">Saltar al contenido</a>
 
-<main id="inicio">
 <div class="portada">
-  <svg class="exlibris" viewBox="0 0 240 300" role="img" aria-label="Ex libris de Casa Capriles con el monograma CC">
-    <defs><path id="arco" d="M120,40 a92,122 0 1,1 -0.1,0"/></defs>
-    <ellipse cx="120" cy="162" rx="112" ry="142" fill="none" stroke="currentColor" stroke-width="1.6"/>
-    <ellipse cx="120" cy="162" rx="106" ry="136" fill="none" stroke="currentColor" stroke-width=".6"/>
-    <ellipse cx="120" cy="162" rx="78" ry="104" fill="none" stroke="currentColor" stroke-width=".6"/>
-    <g transform="translate(0,0)">
-      <text font-family="EB Garamond, Georgia, serif" font-size="12.5" letter-spacing="2.4" fill="currentColor">
-        <textPath href="#arco" startOffset="0">EX LIBRIS · CASA CAPRILES · OFICIO GRÁFICO Y EDITORIAL · VENEZUELA ·</textPath>
-      </text>
-    </g>
-    <text x="113" y="205" text-anchor="middle" font-family="Bodoni Moda, Didot, serif" font-style="italic" font-size="138" fill="currentColor">C</text>
-    <text x="128" y="190" text-anchor="middle" font-family="Bodoni Moda, Didot, serif" font-size="62" fill="var(--rubrica)">C</text>
-    <path d="M96 236 h48" stroke="currentColor" stroke-width=".8"/>
-    <text x="120" y="252" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="11" letter-spacing="4" fill="currentColor">MMXXVI</text>
-  </svg>
-  <div>
-    <p class="versalitas" style="color:var(--rubrica);margin-bottom:1rem">Casa familiar de oficios</p>
-    <h1>Imprenta, editorial y <em>ediciones digitales</em> al cuidado de una familia.</h1>
-    <p class="bajada">Casa Capriles reúne bajo un mismo techo una industria gráfica, un sello editorial, una revista de pensamiento y un taller de archivos y portales de autor, al servicio de la palabra escrita y de las instituciones que la cultivan.</p>
-    <p class="pie versalitas">Venezuela · Fundada por la familia Capriles</p>
+  <div class="marco" aria-hidden="true"></div>
+  <div class="envoltura">
+    <header class="cab">
+      <a class="firma" href="#inicio" aria-label="Casa Capriles, inicio"><svg class="sim " viewBox="8 14 104 132" aria-hidden="true"><path class="t" d="M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8ZM50.666 128.84Q44.198 128.84 39.347 126.131Q34.496 123.422 31.808 118.424Q29.12 113.426 29.12 106.58Q29.12 97.97 32.039 90.305Q34.958 82.64 40.04 76.76Q45.122 70.88 51.716 67.52Q58.31 64.16 65.702 64.16Q70.658 64.16 74.564 66.197Q77.728 67.847 79.638 70.806L85.652 65H85.82L81.746 82.304H81.578Q82.124 77.936 81.158 74.618Q80.192 71.3 78.113 69.053Q76.034 66.806 73.073 65.651Q70.112 64.496 66.626 64.496Q62.132 64.496 58.331 66.617Q54.53 68.738 51.422 72.413Q48.314 76.088 45.899 80.813Q43.484 85.538 41.888 90.83Q40.292 96.122 39.452 101.477Q38.612 106.832 38.612 111.662Q38.612 115.946 40.019 119.789Q41.426 123.632 44.303 126.068Q47.18 128.504 51.548 128.504Q57.134 128.504 61.985 126.131Q66.836 123.758 70.427 119.747Q72.209 117.757 73.531 115.513Q73.997 115.791 74.484 116.028L71.288 128H71.12L68.268 122.213Q65.366 124.78 61.754 126.467Q56.672 128.84 50.666 128.84ZM80.8 116.4Q76.72 116.4 73.65 114.41Q70.58 112.42 68.87 108.94Q67.16 105.46 67.16 101Q67.16 96.54 68.87 93.06Q70.58 89.58 73.65 87.59Q76.72 85.6 80.8 85.6Q82.82 85.6 84.6 86.32Q86.38 87.04 87.66 88.3L90.16 86H90.24V94.24H90.16Q90.12 91.78 88.83 89.88Q87.54 87.98 85.51 86.89Q83.48 85.8 81.2 85.8Q78.62 85.8 76.83 87.13Q75.04 88.46 73.96 90.67Q72.88 92.88 72.39 95.57Q71.9 98.26 71.9 101Q71.9 103.72 72.39 106.42Q72.88 109.12 73.96 111.33Q75.04 113.54 76.83 114.87Q78.62 116.2 81.2 116.2Q83.28 116.2 84.99 115.53Q86.7 114.86 87.94 113.67Q89.18 112.48 89.86 110.97Q90.54 109.46 90.56 107.76H90.64V116H90.56L88.28 113.52Q86.98 114.84 85.06 115.62Q83.14 116.4 80.8 116.4Z"/><path class="k" d="M55 14H65L62.5 28H57.5Z"/></svg> <svg class="logo " viewBox="1.31 -0.39 307.21 20.77" aria-hidden="true"><path class="t" d="M201.24 20V19.667H204.107V0.333H201.24V0H210.133Q212.187 0 213.727 0.533Q215.267 1.067 216.113 2.18Q216.96 3.293 216.96 5.027Q216.96 6.76 216.167 7.827Q215.373 8.893 213.847 9.38Q212.799 9.714 211.44 9.819Q212.878 9.9 213.793 10.333Q214.92 10.867 215.48 11.753Q216.04 12.64 216.233 13.7Q216.427 14.76 216.44 15.813Q216.453 16.867 216.487 17.753Q216.52 18.64 216.773 19.18Q217.027 19.72 217.707 19.72Q218.133 19.72 218.487 19.627Q218.84 19.533 219.107 19.4L219.227 19.707Q218.907 19.88 218.24 20.013Q217.573 20.147 216.667 20.147Q215.48 20.147 214.807 19.72Q214.133 19.293 213.827 18.567Q213.52 17.84 213.44 16.933Q213.36 16.027 213.347 15.067Q213.333 14.107 213.24 13.2Q213.147 12.293 212.833 11.567Q212.52 10.84 211.827 10.413Q211.133 9.987 209.907 9.987H206.96V19.667H209.853V20ZM184.32 0Q186.76 0 188.307 0.7Q189.853 1.4 190.593 2.673Q191.333 3.947 191.333 5.68Q191.333 7.413 190.593 8.647Q189.853 9.88 188.307 10.533Q186.76 11.187 184.32 11.187H181.453V19.667H183.84V20H176.2V19.667H178.587V0.333H176.2V0ZM88.213 -0.387 95.173 19.667H97.173V20H89.16V19.667H91.88L89.938 13.653H83.073L80.973 19.667H83.973V20H78.107V19.667H80.6L87.64 -0.387ZM37.427 -0.387 44.387 19.667H46.387V20H38.373V19.667H41.093L39.151 13.653H32.287L30.187 19.667H33.187V20H27.32V19.667H29.813L36.853 -0.387ZM157.92 -0.387 164.88 19.667H166.88V20H158.867V19.667H161.587L159.645 13.653H152.78L150.68 19.667H153.68V20H147.813V19.667H150.307L157.347 -0.387ZM270.587 20V19.667H272.973V0.333H270.587V0H284.933V5.467H284.613Q284.573 4.04 284.093 2.873Q283.613 1.707 282.62 1.02Q281.627 0.333 280.067 0.333H275.84V9.493H277.28Q278.04 9.493 278.68 9.187Q279.32 8.88 279.72 8.273Q280.12 7.667 280.147 6.773H280.48V12.653H280.147Q280.12 11.76 279.72 11.127Q279.32 10.493 278.68 10.16Q278.04 9.827 277.28 9.827H275.84V19.667H279.8Q281.627 19.667 282.727 18.953Q283.827 18.24 284.333 16.967Q284.84 15.693 284.88 14H285.2V20ZM63.133 20.387Q61.44 20.387 60.22 19.86Q59 19.333 58.187 18.413L56.667 20.267H56.387V14.64H56.707Q56.96 15.773 57.447 16.753Q57.933 17.733 58.687 18.467Q59.44 19.2 60.487 19.62Q61.533 20.04 62.92 20.04Q64.307 20.04 65.333 19.553Q66.36 19.067 66.92 18.133Q67.48 17.2 67.48 15.88Q67.48 14.72 66.9 13.927Q66.32 13.133 65.36 12.547Q64.4 11.96 63.26 11.46Q62.12 10.96 60.973 10.407Q59.827 9.853 58.873 9.113Q57.92 8.373 57.34 7.313Q56.76 6.253 56.76 4.747Q56.76 3.227 57.533 2.1Q58.307 0.973 59.58 0.353Q60.853 -0.267 62.36 -0.267Q63.68 -0.267 64.76 0.147Q65.84 0.56 66.64 1.413L68.147 -0.267H68.427V5.307H68.093Q67.787 3.56 67.02 2.407Q66.253 1.253 65.133 0.687Q64.013 0.12 62.613 0.12Q60.76 0.12 59.8 1.027Q58.84 1.933 58.84 3.427Q58.84 4.467 59.413 5.187Q59.987 5.907 60.92 6.46Q61.853 7.013 62.98 7.513Q64.107 8.013 65.233 8.593Q66.36 9.173 67.293 9.96Q68.227 10.747 68.8 11.867Q69.373 12.987 69.373 14.587Q69.373 16.347 68.6 17.653Q67.827 18.96 66.42 19.673Q65.013 20.387 63.133 20.387ZM302.28 20.387Q300.587 20.387 299.367 19.86Q298.147 19.333 297.333 18.413L295.813 20.267H295.533V14.64H295.853Q296.107 15.773 296.593 16.753Q297.08 17.733 297.833 18.467Q298.587 19.2 299.633 19.62Q300.68 20.04 302.067 20.04Q303.453 20.04 304.48 19.553Q305.507 19.067 306.067 18.133Q306.627 17.2 306.627 15.88Q306.627 14.72 306.047 13.927Q305.467 13.133 304.507 12.547Q303.547 11.96 302.407 11.46Q301.267 10.96 300.12 10.407Q298.973 9.853 298.02 9.113Q297.067 8.373 296.487 7.313Q295.907 6.253 295.907 4.747Q295.907 3.227 296.68 2.1Q297.453 0.973 298.727 0.353Q300 -0.267 301.507 -0.267Q302.827 -0.267 303.907 0.147Q304.987 0.56 305.787 1.413L307.293 -0.267H307.573V5.307H307.24Q306.933 3.56 306.167 2.407Q305.4 1.253 304.28 0.687Q303.16 0.12 301.76 0.12Q299.907 0.12 298.947 1.027Q297.987 1.933 297.987 3.427Q297.987 4.467 298.56 5.187Q299.133 5.907 300.067 6.46Q301 7.013 302.127 7.513Q303.253 8.013 304.38 8.593Q305.507 9.173 306.44 9.96Q307.373 10.747 307.947 11.867Q308.52 12.987 308.52 14.587Q308.52 16.347 307.747 17.653Q306.973 18.96 305.567 19.673Q304.16 20.387 302.28 20.387ZM10.467 20.267Q7.707 20.267 5.647 18.933Q3.587 17.6 2.447 15.28Q1.307 12.96 1.307 10Q1.307 7.027 2.447 4.713Q3.587 2.4 5.647 1.067Q7.707 -0.267 10.467 -0.267Q11.787 -0.267 12.96 0.193Q14.133 0.653 15.013 1.48L16.64 0H16.933V5.547H16.6Q16.467 3.933 15.627 2.727Q14.787 1.52 13.5 0.84Q12.213 0.16 10.733 0.16Q9.053 0.16 7.88 1.007Q6.707 1.853 6.007 3.267Q5.307 4.68 4.993 6.433Q4.68 8.187 4.68 10Q4.68 11.813 4.993 13.567Q5.307 15.32 6.007 16.733Q6.707 18.147 7.88 18.993Q9.053 19.84 10.733 19.84Q12.08 19.84 13.167 19.42Q14.253 19 15.053 18.253Q15.853 17.507 16.313 16.533Q16.773 15.56 16.867 14.453H17.2V20H16.907L15.413 18.413Q14.533 19.28 13.26 19.773Q11.987 20.267 10.467 20.267ZM130.96 20.267Q128.2 20.267 126.14 18.933Q124.08 17.6 122.94 15.28Q121.8 12.96 121.8 10Q121.8 7.027 122.94 4.713Q124.08 2.4 126.14 1.067Q128.2 -0.267 130.96 -0.267Q132.28 -0.267 133.453 0.193Q134.627 0.653 135.507 1.48L137.133 0H137.427V5.547H137.093Q136.96 3.933 136.12 2.727Q135.28 1.52 133.993 0.84Q132.707 0.16 131.227 0.16Q129.547 0.16 128.373 1.007Q127.2 1.853 126.5 3.267Q125.8 4.68 125.487 6.433Q125.173 8.187 125.173 10Q125.173 11.813 125.487 13.567Q125.8 15.32 126.5 16.733Q127.2 18.147 128.373 18.993Q129.547 19.84 131.227 19.84Q132.573 19.84 133.66 19.42Q134.747 19 135.547 18.253Q136.347 17.507 136.807 16.533Q137.267 15.56 137.36 14.453H137.693V20H137.4L135.907 18.413Q135.027 19.28 133.753 19.773Q132.48 20.267 130.96 20.267ZM246.693 20V19.667H249.08V0.333H246.693V0H254.333V0.333H251.947V19.667H255.773Q257.333 19.667 258.313 19.26Q259.293 18.853 259.84 18.107Q260.387 17.36 260.607 16.313Q260.827 15.267 260.853 14H261.187V20ZM228.4 20V19.667H231.32V0.333H228.4V0H237.373V0.333H234.173V19.667H237.373V20ZM181.453 10.867H184.213Q185.16 10.867 185.88 10.4Q186.6 9.933 187.087 9.167Q187.573 8.4 187.827 7.487Q188.08 6.573 188.08 5.68Q188.08 4.787 187.827 3.853Q187.573 2.92 187.087 2.113Q186.6 1.307 185.88 0.82Q185.16 0.333 184.213 0.333H181.453ZM206.96 9.653H210.013Q211.293 9.653 212.18 9.113Q213.067 8.573 213.527 7.54Q213.987 6.507 213.987 5.027Q213.987 3.547 213.527 2.493Q213.067 1.44 212.18 0.887Q211.293 0.333 210.013 0.333H206.96V9.653ZM39.048 13.333 35.853 3.44 32.398 13.333H39.048ZM89.835 13.333 86.64 3.44 83.185 13.333H89.835ZM159.541 13.333 156.347 3.44 152.892 13.333H159.541Z"/></svg></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" aria-label="Principal"><ul>
+        <li><a href="#la-casa">La Casa</a></li>
+        <li><a href="#divisiones">Divisiones</a></li>
+        <li><a href="#portal">El Portal</a></li>
+        <li><a href="#obras">Obras</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul></nav>
+    </header>
+    <div class="heroe" id="inicio">
+      <svg class="sim " viewBox="8 14 104 132" role="img" aria-label="Símbolo de Casa Capriles: un portal con piedra clave y las letras CC"><path class="t" d="M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H23V64C23 45.06 37.302 29.179 56.139 27.202L56.315 28.189C37.956 30.078 24 45.545 24 64V142H96V64C96 45.545 82.044 30.078 63.685 28.189L63.861 27.202C82.698 29.179 97 45.06 97 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8ZM50.666 128.84Q44.198 128.84 39.347 126.131Q34.496 123.422 31.808 118.424Q29.12 113.426 29.12 106.58Q29.12 97.97 32.039 90.305Q34.958 82.64 40.04 76.76Q45.122 70.88 51.716 67.52Q58.31 64.16 65.702 64.16Q70.658 64.16 74.564 66.197Q77.728 67.847 79.638 70.806L85.652 65H85.82L81.746 82.304H81.578Q82.124 77.936 81.158 74.618Q80.192 71.3 78.113 69.053Q76.034 66.806 73.073 65.651Q70.112 64.496 66.626 64.496Q62.132 64.496 58.331 66.617Q54.53 68.738 51.422 72.413Q48.314 76.088 45.899 80.813Q43.484 85.538 41.888 90.83Q40.292 96.122 39.452 101.477Q38.612 106.832 38.612 111.662Q38.612 115.946 40.019 119.789Q41.426 123.632 44.303 126.068Q47.18 128.504 51.548 128.504Q57.134 128.504 61.985 126.131Q66.836 123.758 70.427 119.747Q72.209 117.757 73.531 115.513Q73.997 115.791 74.484 116.028L71.288 128H71.12L68.268 122.213Q65.366 124.78 61.754 126.467Q56.672 128.84 50.666 128.84ZM80.8 116.4Q76.72 116.4 73.65 114.41Q70.58 112.42 68.87 108.94Q67.16 105.46 67.16 101Q67.16 96.54 68.87 93.06Q70.58 89.58 73.65 87.59Q76.72 85.6 80.8 85.6Q82.82 85.6 84.6 86.32Q86.38 87.04 87.66 88.3L90.16 86H90.24V94.24H90.16Q90.12 91.78 88.83 89.88Q87.54 87.98 85.51 86.89Q83.48 85.8 81.2 85.8Q78.62 85.8 76.83 87.13Q75.04 88.46 73.96 90.67Q72.88 92.88 72.39 95.57Q71.9 98.26 71.9 101Q71.9 103.72 72.39 106.42Q72.88 109.12 73.96 111.33Q75.04 113.54 76.83 114.87Q78.62 116.2 81.2 116.2Q83.28 116.2 84.99 115.53Q86.7 114.86 87.94 113.67Q89.18 112.48 89.86 110.97Q90.54 109.46 90.56 107.76H90.64V116H90.56L88.28 113.52Q86.98 114.84 85.06 115.62Q83.14 116.4 80.8 116.4Z"/><path class="k" d="M55 14H65L62.5 28H57.5Z"/></svg>
+      <svg class="logo " viewBox="1.31 -0.39 307.21 20.77" role="img" aria-label="Casa Capriles"><path class="t" d="M201.24 20V19.667H204.107V0.333H201.24V0H210.133Q212.187 0 213.727 0.533Q215.267 1.067 216.113 2.18Q216.96 3.293 216.96 5.027Q216.96 6.76 216.167 7.827Q215.373 8.893 213.847 9.38Q212.799 9.714 211.44 9.819Q212.878 9.9 213.793 10.333Q214.92 10.867 215.48 11.753Q216.04 12.64 216.233 13.7Q216.427 14.76 216.44 15.813Q216.453 16.867 216.487 17.753Q216.52 18.64 216.773 19.18Q217.027 19.72 217.707 19.72Q218.133 19.72 218.487 19.627Q218.84 19.533 219.107 19.4L219.227 19.707Q218.907 19.88 218.24 20.013Q217.573 20.147 216.667 20.147Q215.48 20.147 214.807 19.72Q214.133 19.293 213.827 18.567Q213.52 17.84 213.44 16.933Q213.36 16.027 213.347 15.067Q213.333 14.107 213.24 13.2Q213.147 12.293 212.833 11.567Q212.52 10.84 211.827 10.413Q211.133 9.987 209.907 9.987H206.96V19.667H209.853V20ZM184.32 0Q186.76 0 188.307 0.7Q189.853 1.4 190.593 2.673Q191.333 3.947 191.333 5.68Q191.333 7.413 190.593 8.647Q189.853 9.88 188.307 10.533Q186.76 11.187 184.32 11.187H181.453V19.667H183.84V20H176.2V19.667H178.587V0.333H176.2V0ZM88.213 -0.387 95.173 19.667H97.173V20H89.16V19.667H91.88L89.938 13.653H83.073L80.973 19.667H83.973V20H78.107V19.667H80.6L87.64 -0.387ZM37.427 -0.387 44.387 19.667H46.387V20H38.373V19.667H41.093L39.151 13.653H32.287L30.187 19.667H33.187V20H27.32V19.667H29.813L36.853 -0.387ZM157.92 -0.387 164.88 19.667H166.88V20H158.867V19.667H161.587L159.645 13.653H152.78L150.68 19.667H153.68V20H147.813V19.667H150.307L157.347 -0.387ZM270.587 20V19.667H272.973V0.333H270.587V0H284.933V5.467H284.613Q284.573 4.04 284.093 2.873Q283.613 1.707 282.62 1.02Q281.627 0.333 280.067 0.333H275.84V9.493H277.28Q278.04 9.493 278.68 9.187Q279.32 8.88 279.72 8.273Q280.12 7.667 280.147 6.773H280.48V12.653H280.147Q280.12 11.76 279.72 11.127Q279.32 10.493 278.68 10.16Q278.04 9.827 277.28 9.827H275.84V19.667H279.8Q281.627 19.667 282.727 18.953Q283.827 18.24 284.333 16.967Q284.84 15.693 284.88 14H285.2V20ZM63.133 20.387Q61.44 20.387 60.22 19.86Q59 19.333 58.187 18.413L56.667 20.267H56.387V14.64H56.707Q56.96 15.773 57.447 16.753Q57.933 17.733 58.687 18.467Q59.44 19.2 60.487 19.62Q61.533 20.04 62.92 20.04Q64.307 20.04 65.333 19.553Q66.36 19.067 66.92 18.133Q67.48 17.2 67.48 15.88Q67.48 14.72 66.9 13.927Q66.32 13.133 65.36 12.547Q64.4 11.96 63.26 11.46Q62.12 10.96 60.973 10.407Q59.827 9.853 58.873 9.113Q57.92 8.373 57.34 7.313Q56.76 6.253 56.76 4.747Q56.76 3.227 57.533 2.1Q58.307 0.973 59.58 0.353Q60.853 -0.267 62.36 -0.267Q63.68 -0.267 64.76 0.147Q65.84 0.56 66.64 1.413L68.147 -0.267H68.427V5.307H68.093Q67.787 3.56 67.02 2.407Q66.253 1.253 65.133 0.687Q64.013 0.12 62.613 0.12Q60.76 0.12 59.8 1.027Q58.84 1.933 58.84 3.427Q58.84 4.467 59.413 5.187Q59.987 5.907 60.92 6.46Q61.853 7.013 62.98 7.513Q64.107 8.013 65.233 8.593Q66.36 9.173 67.293 9.96Q68.227 10.747 68.8 11.867Q69.373 12.987 69.373 14.587Q69.373 16.347 68.6 17.653Q67.827 18.96 66.42 19.673Q65.013 20.387 63.133 20.387ZM302.28 20.387Q300.587 20.387 299.367 19.86Q298.147 19.333 297.333 18.413L295.813 20.267H295.533V14.64H295.853Q296.107 15.773 296.593 16.753Q297.08 17.733 297.833 18.467Q298.587 19.2 299.633 19.62Q300.68 20.04 302.067 20.04Q303.453 20.04 304.48 19.553Q305.507 19.067 306.067 18.133Q306.627 17.2 306.627 15.88Q306.627 14.72 306.047 13.927Q305.467 13.133 304.507 12.547Q303.547 11.96 302.407 11.46Q301.267 10.96 300.12 10.407Q298.973 9.853 298.02 9.113Q297.067 8.373 296.487 7.313Q295.907 6.253 295.907 4.747Q295.907 3.227 296.68 2.1Q297.453 0.973 298.727 0.353Q300 -0.267 301.507 -0.267Q302.827 -0.267 303.907 0.147Q304.987 0.56 305.787 1.413L307.293 -0.267H307.573V5.307H307.24Q306.933 3.56 306.167 2.407Q305.4 1.253 304.28 0.687Q303.16 0.12 301.76 0.12Q299.907 0.12 298.947 1.027Q297.987 1.933 297.987 3.427Q297.987 4.467 298.56 5.187Q299.133 5.907 300.067 6.46Q301 7.013 302.127 7.513Q303.253 8.013 304.38 8.593Q305.507 9.173 306.44 9.96Q307.373 10.747 307.947 11.867Q308.52 12.987 308.52 14.587Q308.52 16.347 307.747 17.653Q306.973 18.96 305.567 19.673Q304.16 20.387 302.28 20.387ZM10.467 20.267Q7.707 20.267 5.647 18.933Q3.587 17.6 2.447 15.28Q1.307 12.96 1.307 10Q1.307 7.027 2.447 4.713Q3.587 2.4 5.647 1.067Q7.707 -0.267 10.467 -0.267Q11.787 -0.267 12.96 0.193Q14.133 0.653 15.013 1.48L16.64 0H16.933V5.547H16.6Q16.467 3.933 15.627 2.727Q14.787 1.52 13.5 0.84Q12.213 0.16 10.733 0.16Q9.053 0.16 7.88 1.007Q6.707 1.853 6.007 3.267Q5.307 4.68 4.993 6.433Q4.68 8.187 4.68 10Q4.68 11.813 4.993 13.567Q5.307 15.32 6.007 16.733Q6.707 18.147 7.88 18.993Q9.053 19.84 10.733 19.84Q12.08 19.84 13.167 19.42Q14.253 19 15.053 18.253Q15.853 17.507 16.313 16.533Q16.773 15.56 16.867 14.453H17.2V20H16.907L15.413 18.413Q14.533 19.28 13.26 19.773Q11.987 20.267 10.467 20.267ZM130.96 20.267Q128.2 20.267 126.14 18.933Q124.08 17.6 122.94 15.28Q121.8 12.96 121.8 10Q121.8 7.027 122.94 4.713Q124.08 2.4 126.14 1.067Q128.2 -0.267 130.96 -0.267Q132.28 -0.267 133.453 0.193Q134.627 0.653 135.507 1.48L137.133 0H137.427V5.547H137.093Q136.96 3.933 136.12 2.727Q135.28 1.52 133.993 0.84Q132.707 0.16 131.227 0.16Q129.547 0.16 128.373 1.007Q127.2 1.853 126.5 3.267Q125.8 4.68 125.487 6.433Q125.173 8.187 125.173 10Q125.173 11.813 125.487 13.567Q125.8 15.32 126.5 16.733Q127.2 18.147 128.373 18.993Q129.547 19.84 131.227 19.84Q132.573 19.84 133.66 19.42Q134.747 19 135.547 18.253Q136.347 17.507 136.807 16.533Q137.267 15.56 137.36 14.453H137.693V20H137.4L135.907 18.413Q135.027 19.28 133.753 19.773Q132.48 20.267 130.96 20.267ZM246.693 20V19.667H249.08V0.333H246.693V0H254.333V0.333H251.947V19.667H255.773Q257.333 19.667 258.313 19.26Q259.293 18.853 259.84 18.107Q260.387 17.36 260.607 16.313Q260.827 15.267 260.853 14H261.187V20ZM228.4 20V19.667H231.32V0.333H228.4V0H237.373V0.333H234.173V19.667H237.373V20ZM181.453 10.867H184.213Q185.16 10.867 185.88 10.4Q186.6 9.933 187.087 9.167Q187.573 8.4 187.827 7.487Q188.08 6.573 188.08 5.68Q188.08 4.787 187.827 3.853Q187.573 2.92 187.087 2.113Q186.6 1.307 185.88 0.82Q185.16 0.333 184.213 0.333H181.453ZM206.96 9.653H210.013Q211.293 9.653 212.18 9.113Q213.067 8.573 213.527 7.54Q213.987 6.507 213.987 5.027Q213.987 3.547 213.527 2.493Q213.067 1.44 212.18 0.887Q211.293 0.333 210.013 0.333H206.96V9.653ZM39.048 13.333 35.853 3.44 32.398 13.333H39.048ZM89.835 13.333 86.64 3.44 83.185 13.333H89.835ZM159.541 13.333 156.347 3.44 152.892 13.333H159.541Z"/></svg>
+      <p class="lema">Domus et officium</p>
+      <div class="regla" aria-hidden="true"></div>
+      <h1>Imprenta, editorial y <em>ediciones digitales</em> al cuidado de una familia.</h1>
+      <p class="bajada">Una industria gráfica, un sello editorial, una revista de pensamiento y un taller de archivos y portales de autor, bajo un mismo techo.</p>
+      <a class="baja" href="#la-casa">Entrar</a>
+    </div>
   </div>
 </div>
 
+<main>
+<div class="envoltura">
 <div class="sellos" aria-labelledby="t-sellos">
-  <p id="t-sellos" class="rotulo versalitas">Nuestros sellos</p>
+  <p id="t-sellos" class="rotulo">Nuestros sellos</p>
   <ul>
     <li><a class="logo-sello" href="https://graficascapriles.com" aria-label="Organización Gráficas Capriles" style="--esc:1.18;--ar:856/656;--logo:url(sellos/ogc-tinta.png)"><span class="tinta" aria-hidden="true"></span><img src="sellos/ogc-color.png" alt="" loading="lazy"></a></li>
     <li><a class="logo-sello" href="https://luisfelipecaprileseditor.com" aria-label="Luis Felipe Capriles Editor" style="--ar:748/417;--logo:url(sellos/lfc-tinta.png)"><span class="tinta" aria-hidden="true"></span></a></li>
     <li><a class="logo-sello" href="https://venezuelaentrelineas.com" aria-label="Venezuela Entrelíneas" style="--ar:1958/882;--logo:url(sellos/vel-tinta.svg)"><span class="tinta" aria-hidden="true"></span><img src="sellos/vel-color.svg" alt="" loading="lazy"></a></li>
   </ul>
 </div>
+</div>
 
 <section id="la-casa" aria-labelledby="t-casa">
-  <div class="titulo-sec"><p class="rotulo versalitas">La Casa</p><h2 id="t-casa">Una casa, en el sentido antiguo de la palabra</h2></div>
-  <div class="cuerpo">
-    <div class="prosa">
-      <p>En la tradición hispana e italiana, las grandes casas impresoras y editoriales unían el oficio artesanal, el rigor intelectual y el nombre de una familia. Casa Capriles recoge esa tradición y la extiende del papel a la pantalla.</p>
-      <p>No somos una agencia de publicidad ni un estudio de programación. Somos una casa de oficio: imprimimos, editamos, publicamos y preservamos. Cada obra que sale de nuestras manos lleva el mismo cuidado, sea un libro, una revista o el archivo digital de una vida.</p>
-      <p>Trabajamos para autores, familias, universidades, colegios y centros culturales que necesitan que su palabra perdure.</p>
-    </div>
-    <div class="valores">
-      <div><h3>Oficio</h3><p>El trabajo bien hecho, aprendido y transmitido en familia, con la paciencia del taller.</p></div>
-      <div><h3>Cuidado</h3><p>Corrección de textos, rigor tipográfico y atención a cada detalle de la edición.</p></div>
-      <div><h3>Permanencia</h3><p>Obras hechas para durar: libros, archivos y portales que conservan la memoria.</p></div>
-    </div>
+<div class="envoltura">
+  <div class="cabeza revela"><p class="rotulo">La Casa</p><h2 id="t-casa">Una casa, en el sentido antiguo de la palabra</h2></div>
+  <div class="prosa ini revela">
+    <p>En la tradición hispana e italiana, las grandes casas impresoras y editoriales unían el oficio artesanal, el rigor intelectual y el nombre de una familia. Casa Capriles recoge esa tradición y la extiende del papel a la pantalla.</p>
+    <p>No somos una agencia de publicidad ni un estudio de programación. Somos una casa de oficio. Cada obra que sale de nuestras manos lleva el mismo cuidado, sea un libro, una revista o el archivo digital de una vida.</p>
+    <p>Trabajamos para autores, familias, universidades, colegios y centros culturales que necesitan que su palabra perdure.</p>
   </div>
+  <blockquote class="cita revela"><p>Imprimimos, editamos, publicamos y preservamos.</p><span>Los cuatro oficios de la Casa</span></blockquote>
+  <div class="valores">
+    <div class="revela"><h3>Oficio</h3><p>El trabajo bien hecho, aprendido y transmitido en familia, con la paciencia del taller.</p></div>
+    <div class="revela"><h3>Cuidado</h3><p>Corrección de textos, rigor tipográfico y atención a cada detalle de la edición.</p></div>
+    <div class="revela"><h3>Permanencia</h3><p>Obras hechas para durar: libros, archivos y portales que conservan la memoria.</p></div>
+  </div>
+</div>
 </section>
 
 <section id="divisiones" aria-labelledby="t-div">
-  <div class="titulo-sec"><p class="rotulo versalitas">Divisiones</p><h2 id="t-div">Cuatro oficios bajo un mismo techo</h2></div>
-  <div class="cuerpo"><ol class="divisiones">
-    <li><a class="logo-sello" href="https://graficascapriles.com" aria-label="Organización Gráficas Capriles" style="--esc:1.18;--ar:856/656;--logo:url(sellos/ogc-tinta.png)"><span class="tinta" aria-hidden="true"></span><img src="sellos/ogc-color.png" alt="" loading="lazy"></a><span class="num">I</span><h3>Industria Gráfica</h3><p class="sello">Organización Gráficas Capriles</p>
-      <p class="desc">Impresión comercial, editorial e institucional de alta gama, en offset e impresión digital. Cotizaciones y catálogo técnico.</p>
-      <a class="dominio" href="https://graficascapriles.com">graficascapriles.com</a></li>
-    <li><a class="logo-sello" href="https://luisfelipecaprileseditor.com" aria-label="Luis Felipe Capriles Editor" style="--ar:748/417;--logo:url(sellos/lfc-tinta.png)"><span class="tinta" aria-hidden="true"></span></a><span class="num">II</span><h3>Sello Editorial</h3><p class="sello">Luis Felipe Capriles Editor</p>
+<div class="envoltura">
+  <div class="cabeza revela"><p class="rotulo">Divisiones</p><h2 id="t-div">Cuatro oficios bajo un mismo techo</h2><p class="entrada">Cada empresa conserva su nombre y su carácter. La Casa les da dirección, respaldo y un criterio común.</p></div>
+  <ol class="puertas">
+    <li class="puerta revela"><svg class="ventana" viewBox="8 14 104 132" role="img" aria-label="División I"><path class="in" d="M18 142V64C18 40.804 36.804 22 60 22C83.196 22 102 40.804 102 64V142Z"/><text x="60" y="112" text-anchor="middle">I</text><path class="ar" d="M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8Z"/><path class="k" d="M55 14H65L62.5 28H57.5Z"/></svg><span class="area">Industria gráfica</span><h3>Organización Gráficas Capriles</h3>
+      <p class="desc">Impresión comercial, editorial e institucional de alta gama, en offset e impresión digital.</p>
+      <a class="ir" href="https://graficascapriles.com">graficascapriles.com</a></li>
+    <li class="puerta revela"><svg class="ventana" viewBox="8 14 104 132" role="img" aria-label="División II"><path class="in" d="M18 142V64C18 40.804 36.804 22 60 22C83.196 22 102 40.804 102 64V142Z"/><text x="60" y="112" text-anchor="middle">II</text><path class="ar" d="M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8Z"/><path class="k" d="M55 14H65L62.5 28H57.5Z"/></svg><span class="area">Sello editorial</span><h3>Luis Felipe Capriles Editor</h3>
       <p class="desc">Edición, cuidado de textos y venta directa de libros de ensayo, historia, literatura y pensamiento.</p>
-      <a class="dominio" href="https://luisfelipecaprileseditor.com">luisfelipecaprileseditor.com</a></li>
-    <li><a class="logo-sello" href="https://venezuelaentrelineas.com" aria-label="Venezuela Entrelíneas" style="--ar:1958/882;--logo:url(sellos/vel-tinta.svg)"><span class="tinta" aria-hidden="true"></span><img src="sellos/vel-color.svg" alt="" loading="lazy"></a><span class="num">III</span><h3>Medios y Pensamiento</h3><p class="sello">Venezuela Entrelíneas</p>
-      <p class="desc">Revista de ensayo y portal cultural: análisis histórico, crónica y debate intelectual contemporáneo.</p>
-      <a class="dominio" href="https://venezuelaentrelineas.com">venezuelaentrelineas.com</a></li>
-    <li><span aria-hidden="true"></span><span class="num">IV</span><h3>Archivos, Autores y Ediciones Digitales</h3><p class="sello">División curatorial de Casa Capriles</p>
+      <a class="ir" href="https://luisfelipecaprileseditor.com">luisfelipecaprileseditor.com</a></li>
+    <li class="puerta revela"><svg class="ventana" viewBox="8 14 104 132" role="img" aria-label="División III"><path class="in" d="M18 142V64C18 40.804 36.804 22 60 22C83.196 22 102 40.804 102 64V142Z"/><text x="60" y="112" text-anchor="middle">III</text><path class="ar" d="M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8Z"/><path class="k" d="M55 14H65L62.5 28H57.5Z"/></svg><span class="area">Medios y pensamiento</span><h3>Venezuela Entrelíneas</h3>
+      <p class="desc">Revista de ensayo y portal cultural: análisis histórico, crónica y debate intelectual.</p>
+      <a class="ir" href="https://venezuelaentrelineas.com">venezuelaentrelineas.com</a></li>
+    <li class="puerta revela"><svg class="ventana" viewBox="8 14 104 132" role="img" aria-label="División IV"><path class="in" d="M18 142V64C18 40.804 36.804 22 60 22C83.196 22 102 40.804 102 64V142Z"/><text x="60" y="112" text-anchor="middle">IV</text><path class="ar" d="M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8Z"/><path class="k" d="M55 14H65L62.5 28H57.5Z"/></svg><span class="area">Archivos y ediciones digitales</span><h3>Taller digital de la Casa</h3>
       <p class="desc">Portales permanentes para autores, figuras históricas e instituciones educativas y culturales.</p>
-      <a class="dominio" href="#obras">Ver las obras</a></li>
-  </ol></div>
+      <a class="ir" href="#obras">Ver las obras</a></li>
+  </ol>
+</div>
+</section>
+
+<section id="portal" class="banda" aria-labelledby="t-portal">
+<div class="envoltura doble">
+  <div class="revela"><svg class="sim " viewBox="8 14 104 132" aria-hidden="true"><path class="t" d="M8 142H14V64C14 40.702 31.419 21.082 54.553 18.324L55.258 22.269C34.033 24.681 18 42.639 18 64V142H23V64C23 45.06 37.302 29.179 56.139 27.202L56.315 28.189C37.956 30.078 24 45.545 24 64V142H96V64C96 45.545 82.044 30.078 63.685 28.189L63.861 27.202C82.698 29.179 97 45.06 97 64V142H102V64C102 42.639 85.967 24.681 64.742 22.269L65.447 18.324C88.581 21.082 106 40.702 106 64V142H112V146H8ZM50.666 128.84Q44.198 128.84 39.347 126.131Q34.496 123.422 31.808 118.424Q29.12 113.426 29.12 106.58Q29.12 97.97 32.039 90.305Q34.958 82.64 40.04 76.76Q45.122 70.88 51.716 67.52Q58.31 64.16 65.702 64.16Q70.658 64.16 74.564 66.197Q77.728 67.847 79.638 70.806L85.652 65H85.82L81.746 82.304H81.578Q82.124 77.936 81.158 74.618Q80.192 71.3 78.113 69.053Q76.034 66.806 73.073 65.651Q70.112 64.496 66.626 64.496Q62.132 64.496 58.331 66.617Q54.53 68.738 51.422 72.413Q48.314 76.088 45.899 80.813Q43.484 85.538 41.888 90.83Q40.292 96.122 39.452 101.477Q38.612 106.832 38.612 111.662Q38.612 115.946 40.019 119.789Q41.426 123.632 44.303 126.068Q47.18 128.504 51.548 128.504Q57.134 128.504 61.985 126.131Q66.836 123.758 70.427 119.747Q72.209 117.757 73.531 115.513Q73.997 115.791 74.484 116.028L71.288 128H71.12L68.268 122.213Q65.366 124.78 61.754 126.467Q56.672 128.84 50.666 128.84ZM80.8 116.4Q76.72 116.4 73.65 114.41Q70.58 112.42 68.87 108.94Q67.16 105.46 67.16 101Q67.16 96.54 68.87 93.06Q70.58 89.58 73.65 87.59Q76.72 85.6 80.8 85.6Q82.82 85.6 84.6 86.32Q86.38 87.04 87.66 88.3L90.16 86H90.24V94.24H90.16Q90.12 91.78 88.83 89.88Q87.54 87.98 85.51 86.89Q83.48 85.8 81.2 85.8Q78.62 85.8 76.83 87.13Q75.04 88.46 73.96 90.67Q72.88 92.88 72.39 95.57Q71.9 98.26 71.9 101Q71.9 103.72 72.39 106.42Q72.88 109.12 73.96 111.33Q75.04 113.54 76.83 114.87Q78.62 116.2 81.2 116.2Q83.28 116.2 84.99 115.53Q86.7 114.86 87.94 113.67Q89.18 112.48 89.86 110.97Q90.54 109.46 90.56 107.76H90.64V116H90.56L88.28 113.52Q86.98 114.84 85.06 115.62Q83.14 116.4 80.8 116.4Z"/><path class="k" d="M55 14H65L62.5 28H57.5Z"/></svg></div>
+  <div class="texto revela">
+    <p class="rotulo">Nuestro símbolo</p>
+    <h2 id="t-portal">Domus et officium</h2>
+    <p>Casa y oficio. El símbolo de la Casa es un portal: lo primero que se ve de una casa y el lugar por donde se entra a ella.</p>
+    <p>Arriba lo cierra la piedra clave, la última que se coloca y la que sostiene a todas las demás. Es la familia, y por eso es la única pieza con color.</p>
+    <dl>
+      <div><dt>El arco</dt><dd>De medio punto, como las portadas de las casas antiguas.</dd></div>
+      <div><dt>La piedra clave</dt><dd>En rojo rúbrica, el color de las iniciales de los primeros libros.</dd></div>
+      <div><dt>Las dos C</dt><dd>Casa Capriles. Dos generaciones bajo el mismo techo.</dd></div>
+    </dl>
+  </div>
+</div>
 </section>
 
 <section id="obras" aria-labelledby="t-obras">
-  <div class="titulo-sec"><p class="rotulo versalitas">Obras</p><h2 id="t-obras">Archivos, autores y ediciones digitales</h2></div>
-  <div class="cuerpo">
-    <div class="prosa">
-      <p>En Casa Capriles extendemos el rigor del oficio editorial al entorno digital. Desarrollamos portales web, archivos documentales y plataformas de autor concebidos para preservar y difundir trayectorias intelectuales, históricas, literarias e institucionales.</p>
-      <p>Nos encargamos de la arquitectura de la información, la curaduría documental, el cuidado de los textos y el diseño técnico para transformar acervos dispersos en obras digitales permanentes.</p>
-    </div>
-    <div style="margin-top:3rem">
-      <div class="grupo-obras"><h3>Portales de autor y archivos</h3>
-        <ul class="fichas">
-          <li class="ficha"><span class="tipo versalitas">Archivo histórico</span><h4>Gloria Lizárraga de Capriles</h4>
-            <p>Acervo biográfico, fotográfico y documental de la primera alcaldesa electa por voto directo del Municipio Baruta.</p>
-            <div class="pie-ficha"><a href="https://gloriacapriles.com">gloriacapriles.com</a><span class="estado">En línea</span></div></li>
-          <li class="ficha"><span class="tipo versalitas">Obra filosófica</span><h4>Rafael Tomás Caldera</h4>
-            <p>Catálogo razonado de su obra: ensayos, conferencias y trayectoria intelectual.</p>
-            <div class="pie-ficha"><a href="https://rafaeltomascaldera.com">rafaeltomascaldera.com</a><span class="estado">En línea</span></div></li>
-          <li class="ficha"><span class="tipo versalitas">Portal de autora</span><h4>María Denisse Fanianos de Capriles</h4>
-            <p>Semblanza, libros y hemeroteca de una periodista y escritora en plena actividad.</p>
-            <div class="pie-ficha"><a href="https://mariadenissefanianosdecapriles.com">mariadenissefanianosdecapriles.com</a><span class="estado">En línea</span></div></li>
-        </ul></div>
-      <div class="grupo-obras"><h3>Instituciones educativas y culturales</h3>
-        <ul class="fichas">
-          <li class="ficha"><span class="tipo versalitas">Centro cultural · Maracaibo</span><h4>Centro Cultural Pozoviejo</h4>
-            <p>Décadas de trayectoria en la formación de jóvenes en Maracaibo.</p>
-            <div class="pie-ficha"><a href="https://pozoviejo.org">pozoviejo.org</a><span class="estado">En línea</span></div></li>
-        </ul></div>
-    </div>
-  </div>
+<div class="envoltura">
+  <div class="cabeza revela"><p class="rotulo">Obras</p><h2 id="t-obras">Archivos, autores y ediciones digitales</h2><p class="entrada">El rigor del oficio editorial, llevado a la pantalla: portales y archivos hechos para conservar una obra, una vida o una institución.</p></div>
+  <div class="grupo revela"><h3>Portales de autor y archivos</h3>
+    <ul class="fichas">
+      <li class="ficha"><span class="tipo">Archivo histórico</span><h4>Gloria Lizárraga de Capriles</h4>
+        <p>Acervo biográfico, fotográfico y documental de la primera alcaldesa electa por voto directo del Municipio Baruta.</p>
+        <div class="pie-ficha"><a href="https://gloriacapriles.com">gloriacapriles.com</a><span class="estado">En línea</span></div></li>
+      <li class="ficha"><span class="tipo">Obra filosófica</span><h4>Rafael Tomás Caldera</h4>
+        <p>Catálogo razonado de su obra: ensayos, conferencias y trayectoria intelectual.</p>
+        <div class="pie-ficha"><a href="https://rafaeltomascaldera.com">rafaeltomascaldera.com</a><span class="estado">En línea</span></div></li>
+      <li class="ficha"><span class="tipo">Portal de autora</span><h4>María Denisse Fanianos de Capriles</h4>
+        <p>Semblanza, libros y hemeroteca de una periodista y escritora en plena actividad.</p>
+        <div class="pie-ficha"><a href="https://mariadenissefanianosdecapriles.com">mariadenissefanianosdecapriles.com</a><span class="estado">En línea</span></div></li>
+    </ul></div>
+  <div class="grupo revela"><h3>Instituciones educativas y culturales</h3>
+    <ul class="fichas" style="max-width:22rem;margin-inline:auto">
+      <li class="ficha"><span class="tipo">Centro cultural · Maracaibo</span><h4>Centro Cultural Pozoviejo</h4>
+        <p>Décadas de trayectoria en la formación de jóvenes en Maracaibo.</p>
+        <div class="pie-ficha"><a href="https://pozoviejo.org">pozoviejo.org</a><span class="estado">En línea</span></div></li>
+    </ul></div>
+</div>
 </section>
 
 <section id="al-cuidado" aria-labelledby="t-cuidado">
-  <div class="titulo-sec"><p class="rotulo versalitas">Al cuidado de</p><h2 id="t-cuidado">La firma de la Casa</h2></div>
-  <div class="cuerpo">
-    <div class="prosa"><p>Como en los libros antiguos, cada obra lleva su colofón. Al pie de cada sitio que hacemos aparece la fórmula clásica de la edición, <i>al cuidado de</i>, que en italiano se dice <i>a cura di</i>. Así se sabe quién respondió por la obra.</p></div>
-    <dl class="formula">
-      <div><dt>Industria gráfica</dt><dd>© 2026 Organización Gráficas Capriles C.A. Una empresa de Casa Capriles.</dd></div>
-      <div><dt>Sello editorial</dt><dd>© 2026 Luis Felipe Capriles Editor. Sello editorial de Casa Capriles.</dd></div>
-      <div><dt>Publicación</dt><dd>© 2026 Venezuela Entrelíneas. Una publicación de Casa Capriles.</dd></div>
-      <div><dt>Archivo histórico</dt><dd>Archivo documental y edición digital al cuidado de Casa Capriles.</dd></div>
-      <div><dt>Portales de autor e instituciones</dt><dd>Edición digital y desarrollo al cuidado de Casa Capriles.</dd></div>
-    </dl>
-  </div>
+<div class="envoltura">
+  <div class="cabeza revela"><p class="rotulo">Al cuidado de</p><h2 id="t-cuidado">La firma de la Casa</h2><p class="entrada">Como en los libros antiguos, cada obra lleva su colofón. La fórmula <i>al cuidado de</i>, en italiano <i>a cura di</i>, dice quién respondió por ella.</p></div>
+  <dl class="formula revela">
+    <div><dt>Industria gráfica</dt><dd>© 2026 Organización Gráficas Capriles C.A. — Una empresa de Casa Capriles.</dd></div>
+    <div><dt>Sello editorial</dt><dd>© 2026 Luis Felipe Capriles Editor — Sello editorial de Casa Capriles.</dd></div>
+    <div><dt>Publicación</dt><dd>© 2026 Venezuela Entrelíneas — Una publicación de Casa Capriles.</dd></div>
+    <div><dt>Archivo histórico</dt><dd>Archivo documental y edición digital al cuidado de Casa Capriles.</dd></div>
+    <div><dt>Portales de autor</dt><dd>Edición digital y desarrollo al cuidado de Casa Capriles.</dd></div>
+  </dl>
+</div>
 </section>
 
 <section id="contacto" class="contacto" aria-labelledby="t-contacto">
-  <div class="titulo-sec"><p class="rotulo versalitas">Contacto</p><h2 id="t-contacto">Para encargos, ediciones y archivos</h2></div>
-  <div class="cuerpo"><div class="prosa">
+<div class="envoltura doble revela">
+  <img class="lacre" src="marca/sello-lacre.svg" alt="Sello de lacre de Casa Capriles"width="200" height="200">
+  <div>
+    <p class="rotulo">Contacto</p>
+    <h2 id="t-contacto">Para encargos, ediciones y archivos</h2>
     <p>Si su institución, su familia o su obra necesita un libro, una impresión o un archivo digital permanente, escríbanos.</p>
-    <p><a href="mailto:contacto@casacapriles.com">contacto@casacapriles.com</a></p>
-  </div></div>
+    <a class="correo" href="mailto:contacto@casacapriles.com">contacto@casacapriles.com</a>
+  </div>
+</div>
 </section>
 </main>
 
 <footer>
-  <span class="florón" aria-hidden="true">❦</span>
-  <p class="colofon">Esta página se compuso en Bodoni Moda y EB Garamond, sobre papel color crema y en tinta azul, en el taller digital de Casa Capriles.</p>
-  <p class="versalitas">© 2026 Casa Capriles · Venezuela</p>
+  <div class="sello-lineal" role="img" aria-label="Sello de Casa Capriles"></div>
+  <p class="colofon">Esta página se compuso en Bodoni Moda y EB Garamond, en tinta azul sobre papel crema, en el taller digital de Casa Capriles.</p>
+  <div class="regla" aria-hidden="true"></div>
+  <p class="legal">© 2026 Casa Capriles · Venezuela</p>
 </footer>
-</div>
+
+<script>
+(function(){
+  var b=document.querySelector('.menu-btn'),n=document.getElementById('menu');
+  b.addEventListener('click',function(){var a=n.classList.toggle('abierto');b.setAttribute('aria-expanded',a)});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('abierto');b.setAttribute('aria-expanded',false)}});
+  var els=document.querySelectorAll('.revela');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('visto')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visto');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e,i){e.style.transitionDelay=(e.parentElement.classList.contains('puertas')||e.parentElement.classList.contains('valores')?(Array.prototype.indexOf.call(e.parentElement.children,e)*0.12):0)+'s';io.observe(e)});
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "45d39c7491944707a89d9c62fdea7abb"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
